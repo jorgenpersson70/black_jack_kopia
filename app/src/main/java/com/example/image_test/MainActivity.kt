@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
 
     var playerCards_test = mutableListOf<Int>()
     var playerCards_split_test = ArrayList<Int>()
-   // var playerCards = ArrayList<Int>()
+
    var playerCards = mutableListOf<Int>()
     var playerCards_split = ArrayList<Int>()
     var playerCardsName = ArrayList<Int>()
