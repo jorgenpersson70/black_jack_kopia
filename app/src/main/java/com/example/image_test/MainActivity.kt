@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
 
     var dealerCards = ArrayList<Int>()
 
-    // var testa = ArrayList<CardNameValue>()
+
     var testa = mutableListOf<CardNameValue>()
 
     var randomCardsIntValue = ArrayList<CardNameValue>()
@@ -130,8 +130,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //  countdown()
- //       var playerCardLinearLayout = findViewById<LinearLayout>(R.id.playercardLL)
 
         var splitButton = findViewById<Button>(R.id.splitBtn)
         var cards_Btn = findViewById<Button>(R.id.cardsBtn)
@@ -151,18 +149,17 @@ class MainActivity : AppCompatActivity() {
         var right_down_card2 = findViewById<ImageView>(R.id.rightDownCard2)
         var linearLayoutRight = findViewById<LinearLayout>(R.id.linearLayoutRight)
 
-     //   var left_down_card2 = findViewById<ImageView>(R.id.leftDownCard1)
-    //    var right_down_card2 = findViewById<ImageView>(R.id.leftDownCard2)
+
 
         var flip_card1 = findViewById<ImageView>(R.id.flipCard1)
         var flip_card2 = findViewById<ImageView>(R.id.flipCard2)
         var flip_card3 = findViewById<ImageView>(R.id.flipCard3)
-  //      var flip_card4 = findViewById<ImageView>(R.id.flipCard4)
+
 
         var flip_card1_split = findViewById<ImageView>(R.id.flipCard1_split)
         var flip_card2_split = findViewById<ImageView>(R.id.flipCard2_split)
         var flip_card3_split = findViewById<ImageView>(R.id.flipCard3_split)
-    //    var flip_card4_split = findViewById<ImageView>(R.id.flipCard4_split)
+
 
         var flip_lefttopcard = findViewById<ImageView>(R.id.leftTopCard)
         var flip_dealercard2 = findViewById<ImageView>(R.id.dealercard2)
@@ -174,26 +171,10 @@ class MainActivity : AppCompatActivity() {
         var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
         var addPlayerCards2Low = findViewById<TextView>(R.id.addUpPlayer2Low)
 
-   //     var addupdealer1 = findViewById<TextView>(R.id.addUpDealer1)
 
-
-
-      //  var addupdealer2 = findViewById<TextView>(R.id.addUpDealer2)
-
-      //  var stackOfCoins = findViewById<TextView>(R.id.stack)
-
-
-        //
-     //   val scale: Float = resources.displayMetrics.density
-        //
-        //playerCardLinearLayout.size =
-
-    //    stackOfCoins.text = "1000"
         stack = 1000
 
-        //   leftDownCard
-        //   rightDownCard
-        // shuffle
+
         cardArray.initializeDeckOfCards()
 
         var strategyButton = findViewById<Button>(R.id.showStrategyBtn)
@@ -201,7 +182,7 @@ class MainActivity : AppCompatActivity() {
         CardStandBtnLeftInvisible()
         splitDoubleBtnInvisible()
 
-      //  Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show()
+
 
         playSound(true)
         val snack = Snackbar.make(findViewById(android.R.id.content),"JAG FÖRKLARAR",Snackbar.LENGTH_INDEFINITE)
@@ -211,22 +192,7 @@ class MainActivity : AppCompatActivity() {
         }
         snack.show()
 
-  /*      val snack = Snackbar.make(binding.root, "Inte en siffra", Snackbar.LENGTH_INDEFINITE)
-        snack.setAction("Håll Klaffen !!")
-        {
 
-        }
-        snack.show()*/
-
-        // test. går knappen att klicka om den är INVISIBLE, Bra, den går inte att klicka
-       // strategyButton.visibility = View.INVISIBLE
-
-     //   Log.i("scale ", scale.toString())
-
-        // Convert the dps to pixels, based on density scale
-    //    mGestureThreshold = (16.0f * scale + 0.5f).toInt()
-
-    //    Log.i("scale ", mGestureThreshold.toString())
 
         strategyButton.setOnClickListener {
             if (!blockEveryBtn) {
@@ -236,18 +202,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        //  getNewDeal()
+
         newDeal_Btn.setOnClickListener {
-
-         /*   if ((playerLeftBlackJack || playerRightBlackJack) && (dealerCards[0] == 10 || dealerCards[0] == 11))
-            {
-                block = false
-            }*/
-
             if (!blockEveryBtn) {
                 testar()
             }
-
         }
 
 
@@ -263,7 +222,7 @@ class MainActivity : AppCompatActivity() {
                 // if we are in split, then the check must be when the other stand is pressed or the right cards gets to high
 
                 var showDealerCards = false
-              //  playerRightBlackJack
+
                 if (playerRightBlackJack){
                     showDealerCards = true
                 }
@@ -272,13 +231,13 @@ class MainActivity : AppCompatActivity() {
                 }
 
 
-          //      if (!weAreInSplit) {
+
                 if (showDealerCards) {
                     if (!blockclick) {
                         if (!playerLeftHasFiveCards) {
                             check("STANDLEFT")
                         }
-                        //   countdown2()
+
                         countdownOne()
                         flipCardNumber = 1
                         flipDealerCardNumber += 1
@@ -314,20 +273,7 @@ class MainActivity : AppCompatActivity() {
                         snack.show()
                     }
 
-           /*         var slask1 = findViewById<TextView>(R.id.addUpDealer1)
 
-                    Log.i(
-                        "här kommer imagenumber ",
-                        "hej hopp " + randomCardsIntValue[0].name.toString()
-                    )
-                    Log.i(
-                        "här kommer imagenumber ",
-                        "hej hopp " + randomCardsIntValue[0].value.toString()
-                    )
-
-                    slask1.text = randomCardsIntValue[0].value.toString()*/
-
-                  //  var imageName = "R.drawable.clubs"
 
                     setColorOfAnImageView(flip_card1, 0)
 
@@ -358,23 +304,19 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
 
-                       /* if (playerCards[0] == 11 || playerCards[1] == 11 || playerCards[2] == 11) {
-                            sumplayer = playerCards[0] + playerCards[1] + playerCards[2] - 10
-                        }*/
+
 
                         addPlayerCards.text = (sumplayer).toString()
                         if (sumplayer > 21) {
                             addPlayerCards.setBackgroundColor(Color.RED)
-                         //   addPlayerCards.text = "Dealer Wins " + (sumplayer).toString()
+
 
                             flipCardNumber = 0 // prepare for right side
                             playerLeftToMuch = true
                             showCoinsX()
-       /*                     if (playerRightBlackJack) {
-                                cards2Btn.visibility = View.INVISIBLE
-                            }*/
+
                             stack = stack - 100
-      //                      stackOfCoins.text = stack.toString()
+
                         }
                         flip_card1.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
                     }
@@ -384,10 +326,7 @@ class MainActivity : AppCompatActivity() {
                         sumplayer =
                             playerCards[0] + playerCards[1] + playerCards[2] + playerCards[3]
 
-                       /* if (playerCards[0] == 11 || playerCards[1] == 11 || playerCards[2] == 11 || playerCards[3] == 11) {
-                            sumplayer =
-                                playerCards[0] + playerCards[1] + playerCards[2] + playerCards[3] - 10
-                        }*/
+
                         // men vi måste hantera flera ess
                         var countAce = 0
                         for (i in 0..playerCards.size-1)
@@ -412,16 +351,16 @@ class MainActivity : AppCompatActivity() {
                         addPlayerCards.text = (sumplayer).toString()
                         if (sumplayer > 21) {
                             addPlayerCards.setBackgroundColor(Color.RED)
-                  //          addPlayerCards.text = "Dealer Wins " + (sumplayer).toString()
+
 
                             flipCardNumber = 0 // prepare for right side
                             playerLeftToMuch = true
                             showCoinsX()
                             stack = stack - 100
-          //                  stackOfCoins.text = stack.toString()
+
                         }
 
-                        //    addPlayerCards.text = (playerCards[0] + playerCards[1] + playerCards[2] + playerCards[3]).toString()
+
                         flip_card2.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
                     }
 
@@ -430,10 +369,7 @@ class MainActivity : AppCompatActivity() {
                         sumplayer =
                             playerCards[0] + playerCards[1] + playerCards[2] + playerCards[3] + playerCards[4]
 
-                       /* if (playerCards[0] == 11 || playerCards[1] == 11 || playerCards[2] == 11 || playerCards[3] == 11 || playerCards[4] == 11) {
-                            sumplayer =
-                                playerCards[0] + playerCards[1] + playerCards[2] + playerCards[3] + playerCards[4] - 10
-                        }*/
+
                         // men vi måste hantera flera ess
                         var countAce = 0
                         for (i in 0..playerCards.size-1)
@@ -459,13 +395,13 @@ class MainActivity : AppCompatActivity() {
                         addPlayerCards.text = (sumplayer).toString()
                         if (sumplayer > 21) {
                             addPlayerCards.setBackgroundColor(Color.RED)
-                     //       addPlayerCards.text = "Dealer Wins " + (sumplayer).toString()
+
 
                             flipCardNumber = 0 // prepare for right side
                             playerLeftToMuch = true
                             showCoinsX()
                             stack = stack - 100
-      //                      stackOfCoins.text = stack.toString()
+
                         }
                         else{
                             playerLeftHasFiveCards = true
@@ -475,7 +411,7 @@ class MainActivity : AppCompatActivity() {
 
 
                         cards_Btn.visibility = View.INVISIBLE
-         //               stand_Btn.visibility = View.INVISIBLE
+
                         flip_card3.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
                     }
                     flipCardNumber += 1
@@ -506,18 +442,7 @@ class MainActivity : AppCompatActivity() {
                         snack.show()
                     }
 
-       /*             var slask1 = findViewById<TextView>(R.id.addUpDealer1)
 
-                    Log.i(
-                        "här kommer imagenumber ",
-                        "hej hopp " + randomCardsIntValue[0].name.toString()
-                    )
-                    Log.i(
-                        "här kommer imagenumber ",
-                        "hej hopp " + randomCardsIntValue[0].value.toString()
-                    )
-
-                    slask1.text = randomCardsIntValue[0].value.toString()*/
 
                     var imageName = "R.drawable.clubs"
 
@@ -529,9 +454,7 @@ class MainActivity : AppCompatActivity() {
                         sumplayer = playerCards[0] + playerCards[1] + playerCards[2]
 
                         // men vi måste hantera flera ess
-                      /*  if (playerCards[0] == 11 || playerCards[1] == 11 || playerCards[2] == 11) {
-                            sumplayer = playerCards[0] + playerCards[1] + playerCards[2] - 10
-                        }*/
+
 
                         var countAce = 0
                         for (i in 0..playerCards.size-1)
@@ -558,10 +481,10 @@ class MainActivity : AppCompatActivity() {
                         addPlayerCards.text = (sumplayer).toString()
                         if (sumplayer > 21) {
                             addPlayerCards.setBackgroundColor(Color.RED)
-            //                addPlayerCards.text = "Dealer Wins " + (sumplayer).toString()
+
                             showCoinsX()
                             stack = stack - 100
-      //                      stackOfCoins.text = stack.toString()
+
                         }
                         else{
                             countdownOne()
@@ -575,7 +498,7 @@ class MainActivity : AppCompatActivity() {
 
                     flipDealerCardNumber += 1
 
-                    //-------
+
                 }
             }
 
@@ -606,10 +529,9 @@ class MainActivity : AppCompatActivity() {
                         playerCards_split.add(playerCards[1])
                         var playerCardTemp = playerCards[0]
                         playerCards.clear()
-                     //   playerCards.removeAll()
+
                         playerCards.add(playerCardTemp)
-                      //  playerCards.add(playerCards_test[0])
-                     //  playerCards.add(11)
+
                         var randomCardsIntValueH = cardArray.getOneRandomCardsValue()
 
                         if (randomCardsIntValueH == null)
@@ -624,7 +546,7 @@ class MainActivity : AppCompatActivity() {
 
                         left_down_card2.setImageDrawable(getDrawable(randomCardsIntValueH[0].name))
                         playerCards.add(randomCardsIntValueH[0].value)
-                   //     playerCards[1] = randomCardsIntValueH[0].value
+
 
                         randomCardsIntValueH = cardArray.getOneRandomCardsValue()
 
@@ -690,8 +612,7 @@ class MainActivity : AppCompatActivity() {
                             Log.i("size", "card1  " + playerCards[0])
                             Log.i("size", "card2  " + playerCards[1])
 
-                  //          addPlayerCards.text = playerCards[0].toString()
-                      //      addPlayerCards2.text = playerCards[1].toString()
+
 
                             cards2_Btn.visibility = View.INVISIBLE
                             stand2_Btn.visibility = View.INVISIBLE
@@ -703,8 +624,8 @@ class MainActivity : AppCompatActivity() {
                             if (!playerLeftBlackJack) {
                                 showPlayerCoins()
                             }
-                            // kan vi plocka bort blockclick kanske ?
-                         //   blockclick = true
+
+
                         }
                         else
                         {
@@ -738,9 +659,7 @@ class MainActivity : AppCompatActivity() {
         // we are in split. If we get more than 21 and the left cards are in the game, then start dealer cards
         cards2_Btn.setOnClickListener{
 
-   /*         { if (!weAreInSplit)
-                playerLeftPressedStand = true
-            }*/
+
             // we know that it is split since the button is pressed
             // dont think we need blockclick
             var blockclickHere = false
@@ -773,33 +692,15 @@ class MainActivity : AppCompatActivity() {
                     snack.show()
                 }
 
-    /*            var slask1 = findViewById<TextView>(R.id.addUpDealer1)
-
-                Log.i(
-                    "här kommer imagenumber ",
-                    "hej hopp " + randomCardsIntValue[0].name.toString()
-                )
-                Log.i(
-                    "här kommer imagenumber ",
-                    "hej hopp " + randomCardsIntValue[0].value.toString()
-                )
-
-                slask1.text = randomCardsIntValue[0].value.toString()*/
-
                 var imageName = "R.drawable.clubs"
 
                 setColorOfAnImageView(flip_card1, 0)
-
-
 
                 if (flipCardNumber == 1) {
                     playerCards_split.add(randomCardsIntValue[0].value)
                     sumplayer_split = playerCards_split[0] + playerCards_split[1] + playerCards_split[2]
 
                     // men vi måste hantera flera ess
-           /*         if (playerCards_split[0] == 11 || playerCards_split[1] == 11 || playerCards_split[2] == 11) {
-                        sumplayer_split = playerCards_split[0] + playerCards_split[1] + playerCards_split[2] - 10
-                    }*/
 
                     var countAce = 0
                     for (i in 0..playerCards_split.size-1)
@@ -809,10 +710,8 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
-                    // rätt ?
-                /*    if (countAce > 0){
-                        sumplayer_split = sumplayer_split - countAce*10
-                    }*/
+
+
                     if (countAce > 1){
                         sumplayer_split = sumplayer_split - (countAce-1)*10
                         if(sumplayer_split > 21){
@@ -832,18 +731,13 @@ class MainActivity : AppCompatActivity() {
                     addPlayerCards2.text = (sumplayer_split).toString()
                     if (sumplayer_split > 21) {
                         addPlayerCards2.setBackgroundColor(Color.RED)
-     //                   addPlayerCards2.text = "Dealer Wins " + (sumplayer_split).toString()
+
                         showCoinsX_right()
                         playerRightToMuch = true
-                        // testar
-                    //    if(playerLeftBlackJack || playerLeftToMuch || playerLeftPressedStand) {
-        /*                if(playerLeftPressedStand)
-                        {
-                            countdownOne()
-                        }*/
+
 
                         stack = stack - 100
-     //                   stackOfCoins.text = stack.toString()
+
                     }
                     flip_card1_split.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
                 }
@@ -853,9 +747,7 @@ class MainActivity : AppCompatActivity() {
                     sumplayer_split =
                         playerCards_split[0] + playerCards_split[1] + playerCards_split[2] + playerCards_split[3]
 
-                    /*       if (playerCards_split[0] == 11 || playerCards_split[1] == 11 || playerCards_split[2] == 11 || playerCards_split[3] == 11) {
-                        sumplayer_split =
-                            playerCards_split[0] + playerCards_split[1] + playerCards_split[2] + playerCards_split[3] - 10}*/
+
 
                     var countAce = 0
                     for (i in 0..playerCards_split.size - 1) {
@@ -884,21 +776,16 @@ class MainActivity : AppCompatActivity() {
                     addPlayerCards2.text = (sumplayer_split).toString()
                     if (sumplayer_split > 21) {
                         addPlayerCards2.setBackgroundColor(Color.RED)
-      //                  addPlayerCards2.text = "Dealer Wins " + (sumplayer_split).toString()
+
                         showCoinsX_right()
                         playerRightToMuch = true
-                        // testar
-                    //    if(playerLeftBlackJack || playerLeftToMuch || playerLeftPressedStand) {
-              /*          if(playerLeftPressedStand)
-                        {
-                            countdownOne()
-                        }*/
+
 
                         stack = stack - 100
-     //                   stackOfCoins.text = stack.toString()
+
                     }
 
-                    //    addPlayerCards.text = (playerCards[0] + playerCards[1] + playerCards[2] + playerCards[3]).toString()
+
                     flip_card2_split.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
                 }
 
@@ -907,10 +794,7 @@ class MainActivity : AppCompatActivity() {
                     sumplayer_split =
                         playerCards_split[0] + playerCards_split[1] + playerCards_split[2] + playerCards_split[3] + playerCards_split[4]
 
-                    /*if (playerCards_split[0] == 11 || playerCards_split[1] == 11 || playerCards_split[2] == 11 || playerCards_split[3] == 11 || playerCards_split[4] == 11) {
-                        sumplayer_split =
-                            playerCards_split[0] + playerCards_split[1] + playerCards_split[2] + playerCards_split[3] + playerCards_split[4] - 10
-                    }*/
+
 
                     var countAce = 0
                     for (i in 0..playerCards_split.size - 1) {
@@ -938,12 +822,12 @@ class MainActivity : AppCompatActivity() {
                     addPlayerCards2.text = (sumplayer_split).toString()
                     if (sumplayer_split > 21) {
                         addPlayerCards2.setBackgroundColor(Color.RED)
-         //               addPlayerCards2.text = "Dealer Wins " + (sumplayer_split).toString()
+
                         showCoinsX_right()
                         playerRightToMuch = true
 
                         stack = stack - 100
-      //                  stackOfCoins.text = stack.toString()
+
                     }
                     else{
                         playerRightHasFiveCards = true
@@ -952,7 +836,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     cards2_Btn.visibility = View.INVISIBLE
-     //               stand2_Btn.visibility = View.INVISIBLE
+
                     flip_card3_split.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
                 }
 
@@ -1018,16 +902,13 @@ class MainActivity : AppCompatActivity() {
                 mediaPlayer!!.start()
             }
         } else {
-            //  mediaPlayer.stop()
-            //           while (mediaPlayer.isPlaying())
-            //          {
+
             if(mediaPlayer != null)
             {
                 mediaPlayer!!.pause()
             }
 
-            //    mediaPlayer.stop()
-            //          }
+
         }
     }
 
@@ -1054,12 +935,12 @@ class MainActivity : AppCompatActivity() {
         var flip_card1 = findViewById<ImageView>(R.id.flipCard1)
         var flip_card2 = findViewById<ImageView>(R.id.flipCard2)
         var flip_card3 = findViewById<ImageView>(R.id.flipCard3)
-      //  var flip_card4 = findViewById<ImageView>(R.id.flipCard4)
+
 
         var flip_card1_split = findViewById<ImageView>(R.id.flipCard1_split)
         var flip_card2_split = findViewById<ImageView>(R.id.flipCard2_split)
         var flip_card3_split = findViewById<ImageView>(R.id.flipCard3_split)
-    //    var flip_card4_split = findViewById<ImageView>(R.id.flipCard4_split)
+
 
 
         var addupdealer1 = findViewById<TextView>(R.id.addUpDealer1)
@@ -1104,13 +985,7 @@ class MainActivity : AppCompatActivity() {
         if (randomCardsIntValueH == null)
         {
             Toast.makeText(this, "Shuffle", Toast.LENGTH_LONG).show()
-            // jag kunde inte använda this och inte it
-      /*      val snack = Snackbar.make(it, "Shuffle", Snackbar.LENGTH_INDEFINITE)
-            snack.setAction("Jepp")
-            {
 
-            }
-            snack.show()*/
         }
 
         playerLeftHasFiveCards = false
@@ -1152,8 +1027,7 @@ class MainActivity : AppCompatActivity() {
         cardsBtn.visibility = View.VISIBLE
         standBtn.visibility = View.VISIBLE
 
-   //     var noMoneyLeft1 = findViewById<TextView>(R.id.noMoneyLeftTV1)
-  //      var noMoneyLeft2 = findViewById<TextView>(R.id.noMoneyLeftTV2)
+
         var survivedDeals = findViewById<TextView>(R.id.survivedDealsTV)
 
         // All the money spent, new round
@@ -1163,14 +1037,11 @@ class MainActivity : AppCompatActivity() {
                 coins = 14
                 survivedCountDeals = 0
                 survivedDeals.text = ""
-    //            noMoneyLeft1.visibility = View.INVISIBLE
-     //           noMoneyLeft2.visibility = View.INVISIBLE
+
 
             } else {
 
                 survivedDeals.text = survivedCountDeals.toString()
-   //             noMoneyLeft1.visibility = View.VISIBLE
-    //            noMoneyLeft2.visibility = View.VISIBLE
 
                 survivedCountDeals = 0
                 return
@@ -1220,7 +1091,7 @@ class MainActivity : AppCompatActivity() {
         playerCardsName.clear()
         playerCards.clear()
 
-      //  playerCards.removeAll
+
 
         dealerCards.clear()
         playerCards_split.clear()
@@ -1228,7 +1099,7 @@ class MainActivity : AppCompatActivity() {
         Log.i("här kommer imagenumber ", "hej hopp " + randomCardsIntValueH[0].name.toString())
         Log.i("här kommer imagenumber ", "hej hopp " + randomCardsIntValueH[0].value.toString())
 
-        //  slask1H.text = randomCardsIntValueH[0].value.toString()
+
         left_down_card.setImageDrawable(getDrawable(randomCardsIntValueH[0].name))
         playerCards.add(randomCardsIntValueH[0].value)
         playerCardsName.add(randomCardsIntValueH[0].name)
@@ -1238,12 +1109,7 @@ class MainActivity : AppCompatActivity() {
         if (randomCardsIntValueH == null)
         {
             Toast.makeText(this, "Shuffle", Toast.LENGTH_LONG).show()
-        /*    val snack = Snackbar.make(this, "Shuffle", Snackbar.LENGTH_INDEFINITE)
-            snack.setAction("Jepp")
-            {
 
-            }
-            snack.show()*/
         }
         left_down_card2.setImageDrawable(getDrawable(randomCardsIntValueH[0].name))
         playerCards.add(randomCardsIntValueH[0].value)
@@ -1260,25 +1126,19 @@ class MainActivity : AppCompatActivity() {
         if (randomCardsIntValueH == null)
         {
             Toast.makeText(this, "Shuffle", Toast.LENGTH_LONG).show()
-       /*     val snack = Snackbar.make(it, "Shuffle", Snackbar.LENGTH_INDEFINITE)
-            snack.setAction("Jepp")
-            {
 
-            }
-            snack.show()*/
         }
 
         flip_lefttopcard.setImageDrawable(getDrawable(randomCardsIntValueH[0].name))
         dealerCards.add(randomCardsIntValueH[0].value)
 
         addupdealer1.text = randomCardsIntValueH[0].value.toString()
-        //   addupdealer2.text = randomCardsIntValueH[0].value.toString()
 
 
         flip_card1.setImageDrawable(getDrawable(R.drawable.t_back_card))
         flip_card2.setImageDrawable(getDrawable(R.drawable.t_back_card))
         flip_card3.setImageDrawable(getDrawable(R.drawable.t_back_card))
-   //     flip_card4.setImageDrawable(getDrawable(R.drawable.t_back_card))
+
 
         flip_dealercard2.setImageDrawable(getDrawable(R.drawable.t_back_card))
         flip_dealercard3.setImageDrawable(getDrawable(R.drawable.t_back_card))
@@ -1288,15 +1148,7 @@ class MainActivity : AppCompatActivity() {
         flip_card1_split.setImageDrawable(getDrawable(R.drawable.t_back_card))
         flip_card2_split.setImageDrawable(getDrawable(R.drawable.t_back_card))
         flip_card3_split.setImageDrawable(getDrawable(R.drawable.t_back_card))
-    //    flip_card4_split.setImageDrawable(getDrawable(R.drawable.t_back_card))
 
-
-
-   /*     if (playerCards[0] == 11 || playerCards[1] == 11) {
-            addPlayerCards2.text = (playerCards[0] + playerCards[1] - 10).toString()
-        } else {
-            addPlayerCards2.text = "0"
-        }*/
 
         // se mer här
         sumplayer = playerCards[0] + playerCards[1]
@@ -1308,8 +1160,6 @@ class MainActivity : AppCompatActivity() {
 
         // if we got 21 on two cards, then we get 1.5 on the money and its a new deal
         // block all click on the buttons
-
-
 
         if (sumplayer == 21) {
           Toast.makeText(this, "21 ger 1,5 gånger pengarna", Toast.LENGTH_LONG).show()
@@ -1356,10 +1206,10 @@ class MainActivity : AppCompatActivity() {
         coins1_player_x.visibility = View.INVISIBLE
         coins2_player_x.visibility = View.INVISIBLE
 
-       // if (DoubleActive) {
+
             coins3_player_x.visibility = View.INVISIBLE
             coins4_player_x.visibility = View.INVISIBLE
-     //   }
+
     }
 
     fun showCoinsX(){
@@ -1368,8 +1218,7 @@ class MainActivity : AppCompatActivity() {
         var coins3_player_x = findViewById<ImageView>(R.id.coins3_player_x)
         var coins4_player_x = findViewById<ImageView>(R.id.coins4_player_x)
         var survivedDeals = findViewById<TextView>(R.id.survivedDealsTV)
-   //     var noMoneyLeft1 = findViewById<TextView>(R.id.noMoneyLeftTV1)
-   //     var noMoneyLeft2 = findViewById<TextView>(R.id.noMoneyLeftTV2)
+
         var cards_Btn = findViewById<Button>(R.id.cardsBtn)
         var stand_Btn = findViewById<Button>(R.id.standBtn)
         var cards2Btn = findViewById<Button>(R.id.cards2Btn)
@@ -1394,8 +1243,7 @@ class MainActivity : AppCompatActivity() {
         { // TODO hej
 
             survivedDeals.text = survivedCountDeals.toString()
-     //       noMoneyLeft1.visibility = View.VISIBLE
-    //        noMoneyLeft2.visibility = View.VISIBLE
+
             survivedCountDeals = 0
 
         }
@@ -1418,8 +1266,7 @@ class MainActivity : AppCompatActivity() {
         var coins3_player_x = findViewById<ImageView>(R.id.coins3_player_x)
         var coins4_player_x = findViewById<ImageView>(R.id.coins4_player_x)
         var survivedDeals = findViewById<TextView>(R.id.survivedDealsTV)
-    //    var noMoneyLeft1 = findViewById<TextView>(R.id.noMoneyLeftTV1)
-     //   var noMoneyLeft2 = findViewById<TextView>(R.id.noMoneyLeftTV2)
+
         var cards_Btn = findViewById<Button>(R.id.cardsBtn)
         var stand_Btn = findViewById<Button>(R.id.standBtn)
         var cards2Btn = findViewById<Button>(R.id.cards2Btn)
@@ -1448,22 +1295,11 @@ class MainActivity : AppCompatActivity() {
         { // TODO hej
 
             survivedDeals.text = survivedCountDeals.toString()
-     //       noMoneyLeft1.visibility = View.VISIBLE
-     //       noMoneyLeft2.visibility = View.VISIBLE
 
         }
 
         cards2Btn.visibility = View.INVISIBLE
         stand2Btn.visibility = View.INVISIBLE
-   /*     if (weAreInSplit) {
-
-            showCardStandBtnRight()
-            // Take away this option, we have already paid 1.5
-            if (playerRightBlackJack) {
-                cards2Btn.visibility = View.INVISIBLE
-            }
-        }*/
-
 
     }
 
@@ -1479,10 +1315,10 @@ class MainActivity : AppCompatActivity() {
         coins1_player2_x.visibility = View.INVISIBLE
         coins2_player2_x.visibility = View.INVISIBLE
 
-     //   if (DoubleActive){
+
             coins3_player2_x.visibility = View.INVISIBLE
             coins4_player2_x.visibility = View.INVISIBLE
-     //   }
+
 
 
     }
@@ -1492,8 +1328,7 @@ class MainActivity : AppCompatActivity() {
         var coins2_player2_x = findViewById<ImageView>(R.id.coins2_player2_x)
         var coins3_player2_x = findViewById<ImageView>(R.id.coins3_player2_x)
         var coins4_player2_x = findViewById<ImageView>(R.id.coins4_player2_x)
-    //    var survivedDeals = findViewById<TextView>(R.id.survivedDealsTV)
-     //   var noMoneyLeft1 = findViewById<TextView>(R.id.noMoneyLeftTV1)
+
         var noMoneyLeft2 = findViewById<TextView>(R.id.noMoneyLeftTV2)
         var cards2_Btn = findViewById<Button>(R.id.cards2Btn)
         var stand2_Btn = findViewById<Button>(R.id.stand2Btn)
@@ -1577,18 +1412,6 @@ class MainActivity : AppCompatActivity() {
 
         var bigStack1= findViewById<ImageView>(R.id.bigStack1)
         var bigStack2= findViewById<ImageView>(R.id.bigStack2)
-
-
-    //    playerLeftRightCoinsInvisible()
-   /*     coins1_player.visibility = View.INVISIBLE
-        coins2_player.visibility = View.INVISIBLE
-        coins3_player.visibility = View.INVISIBLE
-        coins4_player.visibility = View.INVISIBLE
-
-        coins1_player2.visibility = View.INVISIBLE
-        coins2_player2.visibility = View.INVISIBLE
-        coins3_player2.visibility = View.INVISIBLE
-        coins4_player2.visibility = View.INVISIBLE*/
 
 
         var coinsLeft = coins
@@ -1706,10 +1529,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
-        /*     var coins1_player_x = findViewById<ImageView>(R.id.coins1_player_x)
-             coins1_player_x.visibility = View.VISIBLE*/
     }
 
     fun showCoinsDouble() {
@@ -1786,20 +1605,15 @@ class MainActivity : AppCompatActivity() {
         var flip_card1_split = findViewById<ImageView>(R.id.flipCard1_split)
         var flip_card2_split = findViewById<ImageView>(R.id.flipCard2_split)
         var flip_card3_split = findViewById<ImageView>(R.id.flipCard3_split)
-      //  var flip_card4_split = findViewById<ImageView>(R.id.flipCard4_split)
-
-
 
         flip_card1_split.visibility = View.VISIBLE
         flip_card2_split.visibility = View.VISIBLE
         flip_card3_split.visibility = View.VISIBLE
-   //     flip_card4_split.visibility = View.VISIBLE
 
         playerFlipCards2LL.visibility = View.VISIBLE
 
         right_down_card1.visibility = View.VISIBLE
         right_down_card2.visibility = View.VISIBLE
-
 
         linearLayoutRight.visibility = View.VISIBLE
         splitDoubleBtnInvisible()
@@ -1818,8 +1632,7 @@ class MainActivity : AppCompatActivity() {
     private fun getBitmapFromAssets(fileName: String): Bitmap? {
         return try {
             BitmapFactory.decodeStream(assets.open(fileName))
-            //      BitmapFactory.decodeStream(res.open(fileName))
-            //       BitmapFactory.decodeStream(drawable.open(fileName))
+
         } catch (e: IOException) {
             e.printStackTrace()
             null
@@ -1840,7 +1653,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFinish() {
 
-                //            testar()
             }
         }.start()
     }
@@ -1857,17 +1669,10 @@ class MainActivity : AppCompatActivity() {
         var addupdealer1 = findViewById<TextView>(R.id.addUpDealer1)
         var dealerBlackJack = false
 
-     //   var addupdealer2 = findViewById<TextView>(R.id.addUpDealer2)
-
-
         var addPlayerCards1 = findViewById<TextView>(R.id.addUpPlayerHigh)
         var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
-      //  var stackOfCoins = findViewById<TextView>(R.id.stack)
 
         blockEveryBtn = true
-
-
-      //  addupdealer2.text = "start"
 
         object : CountDownTimer(1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -1880,17 +1685,10 @@ class MainActivity : AppCompatActivity() {
 
                 if (randomCardsIntValue == null)
                 {
-         //           Toast.makeText(it, "Shuffle", Toast.LENGTH_LONG).show()
-        /*            val snack = Snackbar.make(this, "Shuffle", Snackbar.LENGTH_INDEFINITE)
-                    snack.setAction("Jepp")
-                    {
 
-                    }
-                    snack.show()*/
                 }
 
-// fusk testa att lägga 2 ess
-        //        dealerCards.add(2)
+
                 if (cheat)
                 {
                     dealerCards.add(5)
@@ -1916,13 +1714,11 @@ class MainActivity : AppCompatActivity() {
 
                     addupdealer1.text = (sum).toString()
 
-  //                  addupdealer2.text = ""
 
                     if (sum > 21) {
                         addupdealer1.setBackgroundColor(Color.RED)
                         dealerNoMoreCards = 2
-     //                   addupdealer2.text = "Player wins33"
-                        // fast kolla dubbel
+
                         if (!playerLeftBlackJack) {
                             if (DoubleActive)
                             {
@@ -1943,45 +1739,33 @@ class MainActivity : AppCompatActivity() {
                         }
 
                         showCoins()
-                     //   showCoinsX_right_invisible()
+
                         stack = stack + 100
-    //                    stackOfCoins.text = stack.toString()
+
 
                     } else
                     {
                         if (sum >= 17) {
-      //                      addupdealer2.text = "Dealer has to stand"
+
                             dealerNoMoreCards = 2
-                           // var sumdealer = dealerCards[0] + dealerCards[1]
+
 
                             showDealPlaySum(sum, sumplayer)
 
-/// det blev player wins.
+
 
                             if ((sum > sumplayer) || (sumplayer > 21)){
-        //                        addupdealer2.text = "Dealer wins11"
-                                stack = stack - 100
-            //                    stackOfCoins.text = stack.toString()
 
-                                //    showCoinsX_right()
+                                stack = stack - 100
 
                                 showCoinsX2()
                             } else
                             {
                                 if (sum == sumplayer) {
-         //                           addupdealer2.text = "Split Pot" // put money back
-                                    // fast kolla dubbel
+
                                         if (dealerBlackJack == true)
                                         {
                                             if (playerLeftBlackJack){
-                                                // get 3 coins back
-                                      //          Toast.makeText(it, "Sorry, tar tillbaka pengar", Toast.LENGTH_LONG).show()
-                                 /*               val snack = Snackbar.make(requireActivity(), "Inte en siffra", Snackbar.LENGTH_INDEFINITE)
-                                                snack.setAction("Jepp")
-                                                {
-
-                                                }
-                                                snack.show() */
 
                                                 coins -= 3
                                                 showCoins()
@@ -1993,7 +1777,7 @@ class MainActivity : AppCompatActivity() {
 
                                         }else
                                         {
-                                            //coins += 2
+
                                             if (DoubleActive)
                                             {
                                                 coins += 4
@@ -2004,14 +1788,13 @@ class MainActivity : AppCompatActivity() {
                                             showCoins()
                                         }
 
-                                //    showCoins()
+
                                 } else {
-             //                       addupdealer2.text = "Player wins44"
+
                                     stack = stack + 100
-             //                       stackOfCoins.text = stack.toString()
-                                    // fast kolla dubbel
+
                                     if (!playerLeftBlackJack) {
-                                       // coins += 4
+
                                         if (DoubleActive)
                                         {
                                             coins += 8
@@ -2026,27 +1809,21 @@ class MainActivity : AppCompatActivity() {
 
                             if (weAreInSplit) {
                                 if ((sum > sumplayer_split) || (sumplayer_split > 21)){
-            //                        addupdealer2.text = "Dealer wins22"
-                                    stack = stack - 100
-             //                       stackOfCoins.text = stack.toString()
 
-                                    // va ??
+                                    stack = stack - 100
+
                                     if (!playerRightToMuch) {
                                         showCoinsX_right()
                                     }
 
-                                    //  showCoinsX()
                                 } else
                                 {
                                     if (sum == sumplayer_split) {
-             //                           addupdealer2.text = "Split Pot" // put money back
-                                        // fast kolla dubbel
-                                      //  coins += 2
+
                                         if (dealerBlackJack == true)
                                         {
                                             if (playerRightBlackJack){
-                                                // get 3 coins back
-                                              //  Toast.makeText(it, "Sorry, tar tillbaka pengar", Toast.LENGTH_LONG).show()
+
                                                 coins -= 3
                                                 showCoins()
                                             }
@@ -2059,12 +1836,11 @@ class MainActivity : AppCompatActivity() {
                                             coins += 2
                                             showCoins()
                                         }
-                                    //    showCoins()
+
                                     } else {
-              //                          addupdealer2.text = "Player wins"
+
                                         stack = stack + 100
-              //                          stackOfCoins.text = stack.toString()
-                                        // fast kolla dubbel
+
                                         if (!playerRightBlackJack) {
                                             coins += 4
                                         }
@@ -2091,14 +1867,9 @@ class MainActivity : AppCompatActivity() {
         var flip_dealercard5 = findViewById<ImageView>(R.id.dealercard5)
         var addupdealer1 = findViewById<TextView>(R.id.addUpDealer1)
 
-   //     var addupdealer2 = findViewById<TextView>(R.id.addUpDealer2)
-
         var addPlayerCards1 = findViewById<TextView>(R.id.addUpPlayerHigh)
         var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
-  //      var stackOfCoins = findViewById<TextView>(R.id.stack)
 
-     //   addupdealer2.text = "start"
-            //  if (secondcard) {
             object : CountDownTimer(1000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                 }
@@ -2113,19 +1884,12 @@ class MainActivity : AppCompatActivity() {
 
                     if (randomCardsIntValue == null)
                     {
-                   /*     Toast.makeText(this, "Shuffle", Toast.LENGTH_LONG).show()
-                        val snack = Snackbar.make(this, "Shuffle", Snackbar.LENGTH_INDEFINITE)
-                        snack.setAction("Jepp")
-                        {
 
-                        }
-                        snack.show()*/
                     }
-                  //  dealerCards.add(randomCardsIntValue[0].value)
+
                     flip_dealercard3.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
 
-                    // fusk
-         //           dealerCards.add(2)
+
                     if (cheat)
                     {
                         dealerCards.add(10)
@@ -2137,12 +1901,6 @@ class MainActivity : AppCompatActivity() {
 
                         var sum = dealerCards[0] + dealerCards[1] + dealerCards[2]
 
-                    /*    if (sum > 21) {
-                            if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11) {
-                                sum = dealerCards[0] + dealerCards[1] + dealerCards[2] - 10
-                            }
-                        }*/
-
                         var countAce = 0
                         for (i in 0..dealerCards.size - 1)
                         {
@@ -2151,10 +1909,7 @@ class MainActivity : AppCompatActivity() {
                                countAce++
                             }
                         }
-                /*        if (countAce > 1)
-                        {
-                            sum = sum - (countAce-1)* 10
-                        }*/
+
 
                     if (countAce > 1){
 
@@ -2170,21 +1925,15 @@ class MainActivity : AppCompatActivity() {
                             sum = sum - countAce*10
                         }
                     }
-                    // men möjligen även check om jag är över 16
 
                         addupdealer1.text = (sum).toString()
-
-    //                    addupdealer2.text = ""
-
 
                         if (sum > 21)
                         {
                             addupdealer1.setBackgroundColor(Color.RED)
-     //                       addupdealer2.text = "Dealer to high"
 
-      //                      addupdealer2.text = "Player wins"
                             stack = stack + 100
-      //                      stackOfCoins.text = stack.toString()
+
                             dealerNoMoreCards = 3
                             // fast kolla dubbel
                             if (!playerLeftToMuch) {
@@ -2215,23 +1964,17 @@ class MainActivity : AppCompatActivity() {
                         } else {
                             if (sum >= 17) {
                                 dealerNoMoreCards = 3
-    //                            addupdealer2.text = "Dealer has to stand"
-
-                      //          var sumdealer = dealerCards[0] + dealerCards[1] + dealerCards[2]
 
                                 showDealPlaySum(sum, sumplayer)
 
                                 if ((sum > sumplayer) || (sumplayer > 21)){
-                          //      if (sum > sumplayer) {
-         //                           addupdealer2.text = "Dealer wins"
+
                                     stack = stack - 100
-          //                          stackOfCoins.text = stack.toString()
-                                    //         showCoinsX_right()
+
                                     showCoinsX2()
                                 } else {
                                     if (sum == sumplayer) {
-         //                               addupdealer2.text = "Split Pot" // put money back
-                                        // fast kolla dubbel
+
                                             // Dealer has 3 cards and if we have a black jack, then we have already given
                                         if (!playerLeftBlackJack) {
                                             if (DoubleActive) {
@@ -2240,13 +1983,12 @@ class MainActivity : AppCompatActivity() {
                                                 coins += 2
                                             }
                                         }
-                                       // coins += 2
+
                                         showCoins()
                                     } else {
-            //                            addupdealer2.text = "Player wins"
+
                                         stack = stack + 100
-              //                          stackOfCoins.text = stack.toString()
-                                        // fast kolla dubbel
+
                                         if (!playerLeftBlackJack) {
                                           //  coins += 4
                                             if (DoubleActive)
@@ -2261,29 +2003,26 @@ class MainActivity : AppCompatActivity() {
                                     }
                                 }
                                 if (weAreInSplit) {
-                            //        if (sum > sumplayer_split) {
+
                                     if ((sum > sumplayer_split) || (sumplayer_split > 21)){
-              //                          addupdealer2.text = "Dealer wins55"
+
                                         stack = stack - 100
-             //                           stackOfCoins.text = stack.toString()
-                              // already shown                   showCoinsX_right()
-                                       // showCoinsX()
+
                                         if (!playerRightToMuch) {
                                             showCoinsX_right()
                                         }
                                     } else {
                                         if (sum == sumplayer_split) {
-              //                              addupdealer2.text = "Split Pot" // put money back
-                                            // fast kolla dubbel
+
                                             // Dealer has 3 cards and if we have a black jack, then we have already given
                                             if (!playerRightBlackJack) {
                                                 coins += 2
                                             }
                                             showCoins()
                                         } else {
-             //                               addupdealer2.text = "Player wins"
+
                                             stack = stack + 100
-             //                               stackOfCoins.text = stack.toString()
+
                                             // fast kolla dubbel
                                             if (!playerRightBlackJack) {
                                                 coins += 4
@@ -2293,7 +2032,6 @@ class MainActivity : AppCompatActivity() {
                                     }
                                 }
 
-     //                           addPlayerCards2.text = addPlayerCards1.text
 
                                 return
 
@@ -2301,67 +2039,9 @@ class MainActivity : AppCompatActivity() {
                         }
 
 
-       /*             if (weAreInSplit) {
-                        var sum = dealerCards[0] + dealerCards[1] + dealerCards[2]
-
-                        if (sum > 21) {
-                            if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11) {
-                                sum = dealerCards[0] + dealerCards[1] + dealerCards[2] - 10
-                            }
-                        }
-
-                        addupdealer1.text = (sum).toString()
-
-                        addupdealer2.text = ""
-
-
-                        if (sum > 21) {
-                            addupdealer1.setBackgroundColor(Color.RED)
-                            addupdealer2.text = "Dealer to high"
-
-                            addupdealer2.text = "Player wins"
-                            stack = stack + 100
-                            stackOfCoins.text = stack.toString()
-                            dealerNoMoreCards = 3
-
-                            return
-                        } else {
-                            if (sum >= 17) {
-                                dealerNoMoreCards = 3
-                                addupdealer2.text = "Dealer has to stand"
-
-                                var sumdealer = dealerCards[0] + dealerCards[1] + dealerCards[2]
-
-                                showDealPlaySum(sumdealer, sumplayer)
-
-                                if (sumdealer > sumplayer) {
-                                    addupdealer2.text = "Dealer wins"
-                                    stack = stack - 100
-                                    stackOfCoins.text = stack.toString()
-                                    //         showCoinsX_right()
-                                    showCoinsX()
-                                } else {
-                                    if (sumdealer == sumplayer) {
-                                        addupdealer2.text = "Split Pot" // put money back
-                                    } else {
-                                        addupdealer2.text = "Player wins"
-                                        stack = stack + 100
-                                        stackOfCoins.text = stack.toString()
-                                    }
-                                }
-
-                                addPlayerCards2.text = addPlayerCards1.text
-
-                                return
-                            }
-                        }
-                    }*/
-
-
-       // ojdå             if (addupdealer2.text == ""){
                         secondcard = true
                         countdownThree()
-           //         }
+
 
                 }
             }.start()
@@ -2375,14 +2055,9 @@ class MainActivity : AppCompatActivity() {
         var flip_dealercard5 = findViewById<ImageView>(R.id.dealercard5)
         var addupdealer1 = findViewById<TextView>(R.id.addUpDealer1)
 
-   //     var addupdealer2 = findViewById<TextView>(R.id.addUpDealer2)
-
         var addPlayerCards1 = findViewById<TextView>(R.id.addUpPlayerHigh)
         var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
-   //     var stackOfCoins = findViewById<TextView>(R.id.stack)
 
-
-    //    addupdealer2.text = "start"
 
 
         object : CountDownTimer(1000, 1000) {
@@ -2398,17 +2073,9 @@ class MainActivity : AppCompatActivity() {
 
                 if (randomCardsIntValue == null)
                 {
-                /*    Toast.makeText(this, "Shuffle", Toast.LENGTH_LONG).show()
-                    val snack = Snackbar.make(this, "Shuffle", Snackbar.LENGTH_INDEFINITE)
-                    snack.setAction("Jepp")
-                    {
 
-                    }
-                    snack.show()*/
                 }
-              //  dealerCards.add(randomCardsIntValue[0].value)
 
-                // fusk
      //           dealerCards.add(2)
 
                 if (cheat)
@@ -2424,11 +2091,7 @@ class MainActivity : AppCompatActivity() {
 //--------------------------- kan det tas bort ?
                 var sum = dealerCards[0] + dealerCards[1] + dealerCards[2]
 
-                /*if (sum > 21) {
-                    if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11) {
-                        sum = dealerCards[0] + dealerCards[1] + dealerCards[2] - 10
-                    }
-                }*/
+
                 var countAce = 0
                 for (i in 0..dealerCards.size - 1)
                 {
@@ -2437,10 +2100,7 @@ class MainActivity : AppCompatActivity() {
                         countAce++
                     }
                 }
-            /*    if (countAce > 1)
-                {
-                    sum = sum - (countAce-1)* 10
-                }*/
+
                 if (countAce > 1){
 
                     sum = sum - (countAce-1)* 10
@@ -2461,11 +2121,9 @@ class MainActivity : AppCompatActivity() {
 // Vi behöver nog inte ha detta
                 if (sum > 21) {
                     addupdealer1.setBackgroundColor(Color.RED)
-    //                addupdealer2.text = "Dealer to high"
 
-     //               addupdealer2.text = "Player wins"
                     stack = stack + 100
-     //               stackOfCoins.text = stack.toString()
+
                     dealerNoMoreCards = 3
                     // fast kolla dubbel
                     if (!playerLeftToMuch) {
@@ -2478,12 +2136,12 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
-                  //  coins += 4
+
 
                     // check if bust
                     if (weAreInSplit)
                     {
-          //              coins += 4
+
                         if (!playerRightToMuch) {
                             if (!playerRightBlackJack) {
                                 coins += 4
@@ -2496,30 +2154,20 @@ class MainActivity : AppCompatActivity() {
                     return
                 } else {
                     if (sum >= 17) {
-                        //      Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-    //                    addupdealer2.text = "Dealer has to stand"
-                        dealerNoMoreCards = 3
-         //               var sumdealer = dealerCards[0] + dealerCards[1] + dealerCards[2]
 
-                        /*    var sumplayer = 0
-                        for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
+                        dealerNoMoreCards = 3
 
                         showDealPlaySum(sum, sumplayer)
 
-          //              if (sum > sumplayer) {
+
                         if ((sum > sumplayer) || (sumplayer > 21)){
-     //                       addupdealer2.text = "Dealer wins"
+
                             stack = stack - 100
-      //                      stackOfCoins.text = stack.toString()
-                      //      showCoinsX_right()
+
                             showCoinsX2()
                         } else {
                             if (sum == sumplayer) {
-         //                       addupdealer2.text = "Split Pot" // put money back
-                                // fast kolla dubbel
-                             //   coins += 2
+
                                 // Dealer has 3 cards and if we have a black jack, then we have already given
                                 if (!playerLeftBlackJack) {
                                     if (DoubleActive) {
@@ -2530,9 +2178,9 @@ class MainActivity : AppCompatActivity() {
                                 }
                                 showCoins()
                             } else {
-          //                      addupdealer2.text = "Player wins"
+
                                 stack = stack + 100
-         //                       stackOfCoins.text = stack.toString()
+
                                 // fast kolla dubbel
                                 if (!playerLeftBlackJack) {
                                   //  coins += 4
@@ -2544,24 +2192,22 @@ class MainActivity : AppCompatActivity() {
                                         coins += 4
                                     }
                                 }
-                        //        coins += 4
+
                                 showCoins()
                             }
                         }
                         if (weAreInSplit) {
-                         //   if (sum > sumplayer_split) {
+
                             if ((sum > sumplayer_split) || (sumplayer_split > 21)){
-          //                      addupdealer2.text = "Dealer wins"
+
                                 stack = stack - 100
-          //                      stackOfCoins.text = stack.toString()
-                     // already shown                 showCoinsX_right()
-                         //       showCoinsX()
+
                                 if (!playerRightToMuch) {
                                     showCoinsX_right()
                                 }
                             } else {
                                 if (sum == sumplayer_split) {
-             //                       addupdealer2.text = "Split Pot" // put money back
+
                                     // fast kolla dubbel
                                     // Dealer has 3 cards and if we have a black jack, then we have already given
                                     if (!playerRightBlackJack) {
@@ -2569,9 +2215,9 @@ class MainActivity : AppCompatActivity() {
                                     }
                                     showCoins()
                                 } else {
-            //                        addupdealer2.text = "Player wins"
+
                                     stack = stack + 100
-             //                       stackOfCoins.text = stack.toString()
+
                                     // fast kolla dubbel
 
                                     // we have already handed 1.5
@@ -2582,8 +2228,6 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                         }
-
-  //                      addPlayerCards2.text = addPlayerCards1.text
 
 
                         return
@@ -2596,12 +2240,7 @@ class MainActivity : AppCompatActivity() {
 
                     sum = dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
 
-                  /*  if (sum > 21) {
-                        if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11) {
-                            sum =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] - 10
-                        }
-                    }*/
+
                     var countAce = 0
                     for (i in 0..dealerCards.size - 1)
                     {
@@ -2610,10 +2249,7 @@ class MainActivity : AppCompatActivity() {
                             countAce++
                         }
                     }
-                  /*  if (countAce > 1)
-                    {
-                        sum = sum - (countAce-1)* 10
-                    }*/
+
                     if (countAce > 1){
 
                         sum = sum - (countAce-1)* 10
@@ -2631,23 +2267,18 @@ class MainActivity : AppCompatActivity() {
 
                     addupdealer1.text = (sum).toString()
 
-       //             addupdealer2.text = ""
-
-
 
                     if (sum > 21) {
                         addupdealer1.setBackgroundColor(Color.RED)
-         //               addupdealer2.text = "Dealer to high"
 
-          //              addupdealer2.text = "Player wins"
                         stack = stack + 100
-         //               stackOfCoins.text = stack.toString()
+
                         dealerNoMoreCards = 4
                         // fast kolla dubbel
-                        //   coins += 4
+
                         if (!playerLeftToMuch) {
                             if (!playerLeftBlackJack) {
-                                //    coins += 4
+
                                 if (DoubleActive) {
                                     coins += 8
                                 } else {
@@ -2659,7 +2290,7 @@ class MainActivity : AppCompatActivity() {
                         // check if bust
                         if (weAreInSplit)
                         {
-         //                   coins += 4 must check fat
+
                             if (!playerRightToMuch) {
                                 if (!playerRightBlackJack) {
                                     coins += 4
@@ -2673,31 +2304,21 @@ class MainActivity : AppCompatActivity() {
                         return
                     } else {
                         if (sum >= 17) {
-                            //      Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                            dealerNoMoreCards = 4
-     //                       addupdealer2.text = "Dealer has to stand"
-                //            var sumdealer =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
 
-                            /*      var sumplayer = 0
-                        for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
+                            dealerNoMoreCards = 4
+
 
                             showDealPlaySum(sum, sumplayer)
 
-                    //        if (sum > sumplayer) {
+
                             if ((sum > sumplayer) || (sumplayer > 21)){
-          //                      addupdealer2.text = "Dealer wins"
+
                                 stack = stack - 100
-        //                        stackOfCoins.text = stack.toString()
-                                //     showCoinsX_right()
+
                                 showCoinsX2()
                             } else {
                                 if (sum == sumplayer) {
-         //                           addupdealer2.text = "Split Pot"  // put money back
-                                    // fast kolla dubbel
-                                   // coins += 2
+
                                     // Dealer has 3 cards and if we have a black jack, then we have already given
                                     if (!playerLeftBlackJack) {
                                         if (DoubleActive) {
@@ -2708,13 +2329,11 @@ class MainActivity : AppCompatActivity() {
                                     }
                                     showCoins()
                                 } else {
-         //                           addupdealer2.text = "Player wins"
+
                                     stack = stack + 100
-          //                          stackOfCoins.text = stack.toString()
-                                    // fast kolla dubbel
-                              //      coins += 4
+
                                     if (!playerLeftBlackJack) {
-                                     //   coins += 4
+
                                         if (DoubleActive)
                                         {
                                             coins += 8
@@ -2727,116 +2346,48 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                             if (weAreInSplit) {
-                          //      if (sum > sumplayer_split) {
+
                                 if ((sum > sumplayer_split) || (sumplayer_split > 21)){
-         //                           addupdealer2.text = "Dealer wins"
+
                                     stack = stack - 100
-         //                           stackOfCoins.text = stack.toString()
-                     // already shown                    showCoinsX_right()
-                               //     showCoinsX()
+
                                     if (!playerRightToMuch) {
                                         showCoinsX_right()
                                     }
                                 } else {
                                     if (sum == sumplayer_split) {
-             //                           addupdealer2.text = "Split Pot"  // put money back
-                                        // fast kolla dubbel
+
                                         // Dealer has 3 cards and if we have a black jack, then we have already given
                                         if (!playerRightBlackJack) {
                                             coins += 2
                                         }
                                         showCoins()
                                     } else {
-              //                          addupdealer2.text = "Player wins"
+
                                         stack = stack + 100
-            //                            stackOfCoins.text = stack.toString()
-                                        // fast kolla dubbel
+
 
                                         if (!playerRightBlackJack) {
                                             coins += 4
                                         }
-                                  //      coins += 4
+
                                         showCoins()
                                     }
                                 }
                             }
 
-          //                  addPlayerCards2.text = addPlayerCards1.text
 
                             return
                         }
                     }
                 }
 
-     /*           if (weAreInSplit) {
-
-                    sum = dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
-
-                    if (sum > 21) {
-                        if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11) {
-                            sum =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] - 10
-                        }
-                    }
-
-                    addupdealer1.text = (sum).toString()
-
-                    addupdealer2.text = ""
 
 
 
-                    if (sum > 21) {
-                        addupdealer1.setBackgroundColor(Color.RED)
-                        addupdealer2.text = "Dealer to high"
-
-                        addupdealer2.text = "Player wins"
-                        stack = stack + 100
-                        stackOfCoins.text = stack.toString()
-                        dealerNoMoreCards = 4
-
-                        return
-                    } else {
-                        if (sum >= 17) {
-                            //      Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                            dealerNoMoreCards = 4
-                            addupdealer2.text = "Dealer has to stand"
-                            var sumdealer =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
-
-                            /*      var sumplayer = 0
-                        for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
-
-                            showDealPlaySum(sumdealer, sumplayer)
-
-                            if (sumdealer > sumplayer) {
-                                addupdealer2.text = "Dealer wins"
-                                stack = stack - 100
-                                stackOfCoins.text = stack.toString()
-                                //     showCoinsX_right()
-                                showCoinsX()
-                            } else {
-                                if (sumdealer == sumplayer) {
-                                    addupdealer2.text = "Split Pot"  // put money back
-                                } else {
-                                    addupdealer2.text = "Player wins"
-                                    stack = stack + 100
-                                    stackOfCoins.text = stack.toString()
-                                }
-                            }
-
-                            addPlayerCards2.text = addPlayerCards1.text
-
-                            return
-                        }
-                    }
-                }*/
-
- //ojdå               if (addupdealer2.text == ""){
                     secondcard = true
                     countdownFour()
-     //           }
+
 
             }
         }.start()
@@ -2849,19 +2400,8 @@ class MainActivity : AppCompatActivity() {
         var flip_dealercard4 = findViewById<ImageView>(R.id.dealercard4)
         var flip_dealercard5 = findViewById<ImageView>(R.id.dealercard5)
         var addupdealer1 = findViewById<TextView>(R.id.addUpDealer1)
-
-
-    //    var addupdealer2 = findViewById<TextView>(R.id.addUpDealer2)
-
-
         var addPlayerCards1 = findViewById<TextView>(R.id.addUpPlayerHigh)
         var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
-   //     var stackOfCoins = findViewById<TextView>(R.id.stack)
-
-
-
-
- //       addupdealer2.text = "start"
 
 
         object : CountDownTimer(1000, 1000) {
@@ -2877,15 +2417,9 @@ class MainActivity : AppCompatActivity() {
 
                 if (randomCardsIntValue == null)
                 {
-            /*        Toast.makeText(this, "Shuffle", Toast.LENGTH_LONG).show()
-                    val snack = Snackbar.make(this, "Shuffle", Snackbar.LENGTH_INDEFINITE)
-                    snack.setAction("Jepp")
-                    {
 
-                    }
-                    snack.show()*/
                 }
-          //      dealerCards.add(randomCardsIntValue[0].value)
+
 // fusk
      //           dealerCards.add(2)
                 if (cheat)
@@ -2901,12 +2435,7 @@ class MainActivity : AppCompatActivity() {
 // -------------------------------
                 var sum = dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
 
-                /*if (sum > 21) {
-                    if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11) {
-                        sum =
-                            dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] - 10
-                    }
-                }*/
+
 
                 var countAce = 0
                 for (i in 0..dealerCards.size - 1)
@@ -2916,10 +2445,7 @@ class MainActivity : AppCompatActivity() {
                         countAce++
                     }
                 }
-             /*   if (countAce > 1)
-                {
-                    sum = sum - (countAce-1)* 10
-                }*/
+
                 if (countAce > 1){
 
                     sum = sum - (countAce-1)* 10
@@ -2939,16 +2465,14 @@ class MainActivity : AppCompatActivity() {
 
                 if (sum > 21) {
                     addupdealer1.setBackgroundColor(Color.RED)
-     //               addupdealer2.text = "Dealer to high"
 
-     //               addupdealer2.text = "Player wins"
                     stack = stack + 100
-     //               stackOfCoins.text = stack.toString()
+
                     dealerNoMoreCards = 4
                     // fast kolla dubbel
                     if (!playerLeftToMuch) {
                         if (!playerLeftBlackJack) {
-                            //    coins += 4
+
                             if (DoubleActive) {
                                 coins += 8
                             } else {
@@ -2956,7 +2480,7 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
-                //    coins += 4
+
 
                     // check if bust
                     if (weAreInSplit)
@@ -2966,7 +2490,7 @@ class MainActivity : AppCompatActivity() {
                                 coins += 4
                             }
                         }
-                  //      coins += 4
+
                     }
 
 
@@ -2975,33 +2499,22 @@ class MainActivity : AppCompatActivity() {
                     return
                 } else {
                     if (sum >= 17) {
-                        //      Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-        //                addupdealer2.text = "Dealer has to stand"
+
                         dealerNoMoreCards = 4
 
-               //         var sumdealer =
-                      //      dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
 
-                        /*     var sumplayer = 0
-                        for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
 
                         showDealPlaySum(sum, sumplayer)
 
-                    //    if (sum > sumplayer) {
-                        if ((sum > sumplayer) || (sumplayer > 21)){
-         //                   addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-         //                   stackOfCoins.text = stack.toString()
 
-                     //       showCoinsX_right()
+                        if ((sum > sumplayer) || (sumplayer > 21)){
+
+                            stack = stack - 100
+
                             showCoinsX2()
                         } else {
                             if (sum == sumplayer) {
-        //                        addupdealer2.text = "Split Pot" // put money back
-                                // fast kolla dubbel
-                          //      coins += 2
+
                                 // Dealer has 3 cards and if we have a black jack, then we have already given
                                 if (!playerLeftBlackJack) {
                                     if (DoubleActive) {
@@ -3012,12 +2525,12 @@ class MainActivity : AppCompatActivity() {
                                 }
                                 showCoins()
                             } else {
-          //                      addupdealer2.text = "Player wins"
+
                                 stack = stack + 100
-          //                      stackOfCoins.text = stack.toString()
+
                                 // fast kolla dubbel
                                 if (!playerLeftBlackJack) {
-                                //    coins += 4
+
                                     if (DoubleActive)
                                     {
                                         coins += 8
@@ -3026,48 +2539,42 @@ class MainActivity : AppCompatActivity() {
                                         coins += 4
                                     }
                                 }
-                      //          coins += 4
+
                                 showCoins()
                             }
                         }
 
                         if (weAreInSplit) {
-                     //       if (sum > sumplayer_split) {
-                            if ((sum > sumplayer_split) || (sumplayer_split > 21)){
-         //                       addupdealer2.text = "Dealer wins"
-                                stack = stack - 100
-          //                      stackOfCoins.text = stack.toString()
 
-                  // already shown                     showCoinsX_right()
-                          //      showCoinsX()
+                            if ((sum > sumplayer_split) || (sumplayer_split > 21)){
+
+                                stack = stack - 100
+
                                 if (!playerRightToMuch) {
                                     showCoinsX_right()
                                 }
                             } else {
                                 if (sum == sumplayer_split) {
-         //                           addupdealer2.text = "Split Pot" // put money back
-                                    // fast kolla dubbel
+
                                     // Dealer has 3 cards and if we have a black jack, then we have already given
                                     if (!playerRightBlackJack) {
                                         coins += 2
                                     }
                                     showCoins()
                                 } else {
-           //                         addupdealer2.text = "Player wins"
+
                                     stack = stack + 100
-             //                       stackOfCoins.text = stack.toString()
-                                    // fast kolla dubbel
+
 
                                     if (!playerRightBlackJack) {
                                         coins += 4
                                     }
-                                    //        coins += 4
+
                                     showCoins()
                                 }
                             }
                         }
 
-       //                 addPlayerCards2.text = addPlayerCards1.text
 
                         return
                     }
@@ -3079,12 +2586,7 @@ class MainActivity : AppCompatActivity() {
                     sum =
                         dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4]
 
-                  /*  if (sum > 21) {
-                        if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11 || dealerCards[4] == 11) {
-                            sum =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4] - 10
-                        }
-                    }*/
+
 
                     var countAce = 0
                     for (i in 0..dealerCards.size - 1)
@@ -3094,10 +2596,7 @@ class MainActivity : AppCompatActivity() {
                             countAce++
                         }
                     }
-                  /*  if (countAce > 1)
-                    {
-                        sum = sum - (countAce-1)* 10
-                    }*/
+
                     if (countAce > 1){
 
                         sum = sum - (countAce-1)* 10
@@ -3115,21 +2614,17 @@ class MainActivity : AppCompatActivity() {
 
                     addupdealer1.text = (sum).toString()
 
-      //              addupdealer2.text = ""
-
 
                     if (sum > 21) {
                         addupdealer1.setBackgroundColor(Color.RED)
-          //              addupdealer2.text = "Dealer to high"
 
-         //               addupdealer2.text = "Player wins"
                         stack = stack + 100
-         //               stackOfCoins.text = stack.toString()
+
                         dealerNoMoreCards = 5
                         // fast kolla dubbel
                         if (!playerLeftToMuch) {
                             if (!playerLeftBlackJack) {
-                                //  coins += 4
+
                                 if (DoubleActive) {
                                     coins += 8
                                 } else {
@@ -3137,7 +2632,7 @@ class MainActivity : AppCompatActivity() {
                                 }
                             }
                         }
-                //        coins += 4
+
 
                         // check if bust
                         if (weAreInSplit)
@@ -3155,37 +2650,24 @@ class MainActivity : AppCompatActivity() {
                         return
                     } else {
                         if (sum >= 17) {
-                            //     Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-         //                   addupdealer2.text = "Dealer has to stand"
+
                             dealerNoMoreCards = 5
 
-                 /*           var sumdealer =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4]*/
-
-                            /*     var sumplayer = 0
-                        for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
 
                             // five cards and not over 21 is black jack
                             var sumdealer = 21
                             addupdealer1.text = sumdealer.toString()
 
                             showDealPlaySum(sumdealer, sumplayer)
-                            // vet ej
-                          //  if ((sum > sumplayer) || (sumplayer > 21)){
-                            if ((sumdealer > sumplayer) || playerLeftToMuch) {
-      //                          addupdealer2.text = "Dealer wins"
-                                stack = stack - 100
-       //                         stackOfCoins.text = stack.toString()
 
-                                //     showCoinsX_right()
+                            if ((sumdealer > sumplayer) || playerLeftToMuch) {
+
+                                stack = stack - 100
+
                                 showCoinsX2()
                             } else {
                                 if (sumdealer == sumplayer) {
-        //                            addupdealer2.text = "Split Pot"  // put money back
-                                    // fast kolla dubbel
-                              //      coins += 2
+
                                     // Dealer has 3 cards and if we have a black jack, then we have already given
                                     if (!playerLeftBlackJack) {
                                         if (DoubleActive) {
@@ -3196,12 +2678,12 @@ class MainActivity : AppCompatActivity() {
                                     }
                                     showCoins()
                                 } else {
-             //                       addupdealer2.text = "Player wins"
+
                                     stack = stack + 100
-             //                       stackOfCoins.text = stack.toString()
+
                                     // fast kolla dubbel
                                     if (!playerLeftBlackJack) {
-                                      //  coins += 4
+
                                         if (DoubleActive)
                                         {
                                             coins += 8
@@ -3210,47 +2692,40 @@ class MainActivity : AppCompatActivity() {
                                             coins += 4
                                         }
                                     }
-                       //             coins += 4
+
                                     showCoins()
                                 }
                             }
                             if (weAreInSplit) {
                                 // vet ej
                                 if ((sumdealer > sumplayer_split) || playerRightToMuch){
-         //                           addupdealer2.text = "Dealer wins"
-                                    stack = stack - 100
-         //                           stackOfCoins.text = stack.toString()
 
-                      // already shown                   showCoinsX_right()
-                            //        showCoinsX()
-                                  //  if (!playerRightToMuch) {
+                                    stack = stack - 100
+
                                         showCoinsX_right()
-                                   // }
+
                                 } else {
                                     if (sumdealer == sumplayer_split) {
-             //                           addupdealer2.text = "Split Pot"  // put money back
-                                        // fast kolla dubbel
+
                                         // Dealer has 3 cards and if we have a black jack, then we have already given
                                         if (!playerRightBlackJack) {
                                             coins += 2
                                         }
                                         showCoins()
                                     } else {
-             //                           addupdealer2.text = "Player wins"
+
                                         stack = stack + 100
-         //                               stackOfCoins.text = stack.toString()
+
                                         // fast kolla dubbel
 
                                         if (!playerRightBlackJack) {
                                             coins += 4
                                         }
-                                 //       coins += 4
+
                                         showCoins()
                                     }
                                 }
                             }
-
-        //                    addPlayerCards2.text = addPlayerCards1.text
 
                             return
                         }
@@ -3258,75 +2733,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-       /*         if (weAreInSplit) {
-                    sum =
-                        dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4]
 
-                    if (sum > 21) {
-                        if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11 || dealerCards[4] == 11) {
-                            sum =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4] - 10
-                        }
-                    }
-
-                    addupdealer1.text = (sum).toString()
-
-                    addupdealer2.text = ""
-
-
-                    if (sum > 21) {
-                        addupdealer1.setBackgroundColor(Color.RED)
-                        addupdealer2.text = "Dealer to high"
-
-                        addupdealer2.text = "Player wins"
-                        stack = stack + 100
-                        stackOfCoins.text = stack.toString()
-                        dealerNoMoreCards = 5
-
-                        return
-                    } else {
-                        if (sum >= 17) {
-                            //     Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                            addupdealer2.text = "Dealer has to stand"
-                            dealerNoMoreCards = 5
-
-                            var sumdealer =
-                                dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4]
-
-                            /*     var sumplayer = 0
-                        for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
-
-                            // five cards and not over 21 is black jack
-                            sumdealer = 21
-
-                            showDealPlaySum(sumdealer, sumplayer)
-
-                            if (sumdealer > sumplayer) {
-                                addupdealer2.text = "Dealer wins"
-                                stack = stack - 100
-                                stackOfCoins.text = stack.toString()
-
-                                //     showCoinsX_right()
-                                showCoinsX()
-                            } else {
-                                if (sumdealer == sumplayer) {
-                                    addupdealer2.text = "Split Pot"  // put money back
-                                } else {
-                                    addupdealer2.text = "Player wins"
-                                    stack = stack + 100
-                                    stackOfCoins.text = stack.toString()
-                                }
-                            }
-
-                            addPlayerCards2.text = addPlayerCards1.text
-
-                            return
-                        }
-                    }
-
-                }*/
 
                // dealer has five cards and did not reach over 16, this is black jack
   // oddå              if (addupdealer2.text == ""){
@@ -3337,19 +2744,15 @@ class MainActivity : AppCompatActivity() {
 
                     showDealPlaySum(sumdealer2, sumplayer)
 
-               //     if (sumdealer2 > sumplayer) {
-                if ((sumdealer2 > sumplayer) || (sumplayer > 21)){
-      //                  addupdealer2.text = "Dealer wins"
-                        stack = stack - 100
-      //                  stackOfCoins.text = stack.toString()
 
-                        //     showCoinsX_right()
+                if ((sumdealer2 > sumplayer) || (sumplayer > 21)){
+
+                        stack = stack - 100
+
                         showCoinsX2()
                     } else {
                         if (sumdealer2 == sumplayer) {
-        //                    addupdealer2.text = "Split Pot" // put money back
-                            // fast kolla dubbel
-                           // coins += 2
+
                             // Dealer has 3 cards and if we have a black jack, then we have already given
                             if (!playerLeftBlackJack) {
                                 if (DoubleActive) {
@@ -3360,10 +2763,9 @@ class MainActivity : AppCompatActivity() {
                             }
                             showCoins()
                         } else {
-         //                   addupdealer2.text = "Player wins"
+
                             stack = stack + 100
-         //                   stackOfCoins.text = stack.toString()
-                            // fast kolla dubbel
+
                             if (!playerLeftBlackJack) {
                                // coins += 4
                                 if (DoubleActive)
@@ -3374,48 +2776,42 @@ class MainActivity : AppCompatActivity() {
                                     coins += 4
                                 }
                             }
-          //                  coins += 4
+
                             showCoins()
                         }
                     }
                     if (weAreInSplit) {
-                //        if (sumdealer2 > sumplayer_split) {
-                        if ((sumdealer2 > sumplayer_split) || (sumplayer_split > 21)){
-      //                      addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-      //                      stackOfCoins.text = stack.toString()
 
-              // already shown                   showCoinsX_right()
-                        //    showCoinsX()
+                        if ((sumdealer2 > sumplayer_split) || (sumplayer_split > 21)){
+
+                            stack = stack - 100
+
                             if (!playerRightToMuch) {
                                 showCoinsX_right()
                             }
                         } else {
                             if (sumdealer2 == sumplayer_split) {
-          //                      addupdealer2.text = "Split Pot" // put money back
-                                // fast kolla dubbel
+
                                 // Dealer has 3 cards and if we have a black jack, then we have already given
                                 if (!playerRightBlackJack) {
                                     coins += 2
                                 }
                                 showCoins()
                             } else {
-         //                       addupdealer2.text = "Player wins"
+
                                 stack = stack + 100
-          //                      stackOfCoins.text = stack.toString()
-                                // fast kolla dubbel
+
 
                                 if (!playerRightBlackJack) {
                                     coins += 4
                                 }
-            //                    coins += 4
+
                                 showCoins()
                             }
                         }
                     }
 
-     //               addPlayerCards2.text = addPlayerCards1.text
-            //    }
+
             }
         }.start()
 
@@ -3450,437 +2846,13 @@ class MainActivity : AppCompatActivity() {
         snack.show()*/
     }
 
-    /*
-    private fun countdown2_not_use() {
-        var flip_dealercard2 = findViewById<ImageView>(R.id.dealercard2)
-        var flip_dealercard3 = findViewById<ImageView>(R.id.dealercard3)
-        var flip_dealercard4 = findViewById<ImageView>(R.id.dealercard4)
-        var flip_dealercard5 = findViewById<ImageView>(R.id.dealercard5)
-        var addupdealer1 = findViewById<TextView>(R.id.addUpDealer1)
-
-
-        var addupdealer2 = findViewById<TextView>(R.id.addUpDealer2)
-
-
-        var addPlayerCards1 = findViewById<TextView>(R.id.addUpPlayerHigh)
-        var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
-        var stackOfCoins = findViewById<TextView>(R.id.stack)
-
-
-
-
-        addupdealer2.text = "start"
-
-        object : CountDownTimer(1000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                //             addupdealer2.text = (millisUntilFinished / 1000).toString()
-                //  otp_resend.text = (millisUntilFinished / 1000).toString()
-            }
-
-            override fun onFinish() {
-                // do something after countdown is done ie. enable button, change color
-                //      etc.
-                //     otp_resend.text = "done!"
-                //          addupdealer2.text = "2 sekunder har gått"
-                //            testar()
-                randomCardsIntValue = cardArray.getOneRandomCardsValue()
-                dealerCards.add(randomCardsIntValue[0].value)
-                var sum = dealerCards[0] + dealerCards[1]
-                addupdealer1.text = (sum).toString()
-
-                addupdealer2.text = ""
-
-                flip_dealercard2.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
-                if (sum > 21) {
-                    addupdealer1.setBackgroundColor(Color.RED)
-                    dealerNoMoreCards = 2
-                    addupdealer2.text = "Player wins"
-                    stack = stack + 100
-                    stackOfCoins.text = stack.toString()
-
-                } else {
-                    if (sum >= 17) {
-                        //   Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                        /*     val snack = Snackbar.make(it, "Inte en siffra", Snackbar.LENGTH_INDEFINITE)
-                                   snack.setAction("Jepp") {
-
-                               }
-                                   snack.show()*/
-                        addupdealer2.text = "Dealer has to stand"
-                        dealerNoMoreCards = 2
-                        var sumdealer = dealerCards[0] + dealerCards[1]
-
-                        // var sumplayer = 0
-                        //var sumplayer = addPlayerCards.text
-
-                        // måste summera äss här
-                        /*  for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
-
-                        showDealPlaySum(sumdealer, sumplayer)
-
-                        if (sumdealer > sumplayer) {
-                            addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-                            stackOfCoins.text = stack.toString()
-                        } else {
-                            if (sumdealer == sumplayer) {
-                                addupdealer2.text = "Split Pot"
-                            } else {
-                                addupdealer2.text = "Player wins"
-                                stack = stack + 100
-                                stackOfCoins.text = stack.toString()
-                            }
-                        }
-                        return
-                    }
-                }
-                //if (addupdealer2.text == ""){
-                //                secondcard = true
-                // }
-
-            }
-        }.start()
-        //  if (secondcard) {
-        object : CountDownTimer(2000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                //        addupdealer2.text = (millisUntilFinished / 1000).toString()
-                //  otp_resend.text = (millisUntilFinished / 1000).toString()
-            }
-
-            override fun onFinish() {
-                // do something after countdown is done ie. enable button, change color
-                //      etc.
-                //     otp_resend.text = "done!"
-                //         addupdealer2.text = "4 sekunder har gått"
-                //            testar()
-                if (dealerNoMoreCards != 0) {
-                    return
-                }
-                randomCardsIntValue = cardArray.getOneRandomCardsValue()
-                dealerCards.add(randomCardsIntValue[0].value)
-                var sum = dealerCards[0] + dealerCards[1] + dealerCards[2]
-
-                if (sum > 21) {
-                    if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11) {
-                        sum = dealerCards[0] + dealerCards[1] + dealerCards[2] - 10
-                    }
-                }
-
-                addupdealer1.text = (sum).toString()
-
-                flip_dealercard3.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
-                if (sum > 21) {
-                    addupdealer1.setBackgroundColor(Color.RED)
-                    addupdealer2.text = "Dealer to high"
-
-                    addupdealer2.text = "Player wins"
-                    stack = stack + 100
-                    stackOfCoins.text = stack.toString()
-                    dealerNoMoreCards = 3
-
-                    return
-                } else {
-                    if (sum >= 17) {
-                        dealerNoMoreCards = 3
-                        //  Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                        addupdealer2.text = "Dealer has to stand"
-
-                        var sumdealer = dealerCards[0] + dealerCards[1] + dealerCards[2]
-
-                        /* var sumplayer = 0
-
-                        for (i in 0..flipCardNumber+2) {
-                            sumplayer += playerCards[i]
-                        }*/
-
-                        showDealPlaySum(sumdealer, sumplayer)
-
-                        if (sumdealer > sumplayer) {
-                            addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-                            stackOfCoins.text = stack.toString()
-                        } else {
-                            if (sumdealer == sumplayer) {
-                                addupdealer2.text = "Split Pot"
-                            } else {
-                                addupdealer2.text = "Player wins"
-                                stack = stack + 100
-                                stackOfCoins.text = stack.toString()
-                            }
-                        }
-
-                        addPlayerCards2.text = addPlayerCards1.text
-
-                        return
-                    }
-                }
-
-
-            }
-        }.start()
-
-        object : CountDownTimer(3000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                //         addupdealer2.text = (millisUntilFinished / 1000).toString()
-                //  otp_resend.text = (millisUntilFinished / 1000).toString()
-            }
-
-            override fun onFinish() {
-                // do something after countdown is done ie. enable button, change color
-                //      etc.
-                //     otp_resend.text = "done!"
-                if (dealerNoMoreCards != 0) {
-                    return
-                }
-                //        addupdealer2.text = "6 sekunder har gått"
-                //            testar()
-                randomCardsIntValue = cardArray.getOneRandomCardsValue()
-                dealerCards.add(randomCardsIntValue[0].value)
-                var sum = dealerCards[0] + dealerCards[1] + dealerCards[2]
-
-                if (sum > 21) {
-                    if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11) {
-                        sum = dealerCards[0] + dealerCards[1] + dealerCards[2] - 10
-                    }
-                }
-
-// Vi behöver nog inte ha detta
-                if (sum > 21) {
-                    addupdealer1.setBackgroundColor(Color.RED)
-                    addupdealer2.text = "Dealer to high"
-
-                    addupdealer2.text = "Player wins"
-                    stack = stack + 100
-                    stackOfCoins.text = stack.toString()
-                    dealerNoMoreCards = 3
-
-                    return
-                } else {
-                    if (sum >= 17) {
-                        //      Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                        addupdealer2.text = "Dealer has to stand"
-                        dealerNoMoreCards = 3
-                        var sumdealer = dealerCards[0] + dealerCards[1] + dealerCards[2]
-
-                        showDealPlaySum(sumdealer, sumplayer)
-
-                        if (sumdealer > sumplayer) {
-                            addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-                            stackOfCoins.text = stack.toString()
-                        } else {
-                            if (sumdealer == sumplayer) {
-                                addupdealer2.text = "Split Pot"
-                            } else {
-                                addupdealer2.text = "Player wins"
-                                stack = stack + 100
-                                stackOfCoins.text = stack.toString()
-                            }
-                        }
-
-                        addPlayerCards2.text = addPlayerCards1.text
-
-                        return
-                    }
-                }
-
-                sum = dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
-
-                if (sum > 21) {
-                    if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11) {
-                        sum =
-                            dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] - 10
-                    }
-                }
-
-                addupdealer1.text = (sum).toString()
-
-                flip_dealercard4.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
-
-                if (sum > 21) {
-                    addupdealer1.setBackgroundColor(Color.RED)
-                    addupdealer2.text = "Dealer to high"
-
-                    addupdealer2.text = "Player wins"
-                    stack = stack + 100
-                    stackOfCoins.text = stack.toString()
-                    dealerNoMoreCards = 4
-
-                    return
-                } else {
-                    if (sum >= 17) {
-                        //      Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                        dealerNoMoreCards = 4
-                        addupdealer2.text = "Dealer has to stand"
-                        var sumdealer =
-                            dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
-
-
-                        showDealPlaySum(sumdealer, sumplayer)
-
-                        if (sumdealer > sumplayer) {
-                            addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-                            stackOfCoins.text = stack.toString()
-                        } else {
-                            if (sumdealer == sumplayer) {
-                                addupdealer2.text = "Split Pot"
-                            } else {
-                                addupdealer2.text = "Player wins"
-                                stack = stack + 100
-                                stackOfCoins.text = stack.toString()
-                            }
-                        }
-
-                        addPlayerCards2.text = addPlayerCards1.text
-
-                        return
-                    }
-                }
-
-
-            }
-        }.start()
-
-        object : CountDownTimer(4000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-
-            }
-
-            override fun onFinish() {
-
-                if (dealerNoMoreCards != 0) {
-                    return
-                }
-
-                randomCardsIntValue = cardArray.getOneRandomCardsValue()
-                dealerCards.add(randomCardsIntValue[0].value)
-
-                var sum = dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
-
-                if (sum > 21) {
-                    if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11) {
-                        sum =
-                            dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] - 10
-                    }
-                }
-
-                if (sum > 21) {
-                    addupdealer1.setBackgroundColor(Color.RED)
-                    addupdealer2.text = "Dealer to high"
-
-                    addupdealer2.text = "Player wins"
-                    stack = stack + 100
-                    stackOfCoins.text = stack.toString()
-                    dealerNoMoreCards = 4
-
-                    return
-                } else {
-                    if (sum >= 17) {
-                        //      Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                        addupdealer2.text = "Dealer has to stand"
-                        dealerNoMoreCards = 4
-
-                        var sumdealer =
-                            dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3]
-
-
-                        showDealPlaySum(sumdealer, sumplayer)
-
-                        if (sumdealer > sumplayer) {
-                            addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-                            stackOfCoins.text = stack.toString()
-                        } else {
-                            if (sumdealer == sumplayer) {
-                                addupdealer2.text = "Split Pot"
-                            } else {
-                                addupdealer2.text = "Player wins"
-                                stack = stack + 100
-                                stackOfCoins.text = stack.toString()
-                            }
-                        }
-
-                        addPlayerCards2.text = addPlayerCards1.text
-
-                        return
-                    }
-                }
-
-
-                sum =
-                    dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4]
-
-                if (sum > 21) {
-                    if (dealerCards[0] == 11 || dealerCards[1] == 11 || dealerCards[2] == 11 || dealerCards[3] == 11 || dealerCards[4] == 11) {
-                        sum =
-                            dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4] - 10
-                    }
-                }
-
-                addupdealer1.text = (sum).toString()
-
-                flip_dealercard5.setImageDrawable(getDrawable(randomCardsIntValue[0].name))
-                if (sum > 21) {
-                    addupdealer1.setBackgroundColor(Color.RED)
-                    addupdealer2.text = "Dealer to high"
-
-                    addupdealer2.text = "Player wins"
-                    stack = stack + 100
-                    stackOfCoins.text = stack.toString()
-                    dealerNoMoreCards = 5
-
-                    return
-                } else {
-                    if (sum >= 17) {
-                        //     Toast.makeText(this, "Dealer has to stand", Toast.LENGTH_LONG).show()
-                        addupdealer2.text = "Dealer has to stand"
-                        dealerNoMoreCards = 5
-
-                        var sumdealer =
-                            dealerCards[0] + dealerCards[1] + dealerCards[2] + dealerCards[3] + dealerCards[4]
-
-                        showDealPlaySum(sumdealer, sumplayer)
-
-                        if (sumdealer > sumplayer) {
-                            addupdealer2.text = "Dealer wins"
-                            stack = stack - 100
-                            stackOfCoins.text = stack.toString()
-                        } else {
-                            if (sumdealer == sumplayer) {
-                                addupdealer2.text = "Split Pot"
-                            } else {
-                                addupdealer2.text = "Player wins"
-                                stack = stack + 100
-                                stackOfCoins.text = stack.toString()
-                            }
-                        }
-
-                        addPlayerCards2.text = addPlayerCards1.text
-
-                        return
-                    }
-                }
-
-
-            }
-        }.start()
-
-
-    }*/
 
     fun check(buttonpressed : String) {
 
         returnStringGlobal = ""
- //       checkAccordingToStrategy(playerCards[0], playerCards[1], dealerCards[0], 0)
 
         var sum = 0
         var countAce = 0
-
-
-
 
         if ((buttonpressed == "CARDSLEFT") || (buttonpressed == "STANDLEFT"))
         {
@@ -3996,11 +2968,7 @@ class MainActivity : AppCompatActivity() {
                     0
                 )
 
- /*               sum = playerCards[0] + playerCards[1]
 
-                if (sum > 21) {
-                    sum -= 10
-                }*/
         }
 
         if (buttonpressed == "DOUBLE")
@@ -4012,11 +2980,7 @@ class MainActivity : AppCompatActivity() {
                 0
             )
 
-            /*               sum = playerCards[0] + playerCards[1]
 
-                           if (sum > 21) {
-                               sum -= 10
-                           }*/
         }
 
 
@@ -4058,19 +3022,7 @@ class MainActivity : AppCompatActivity() {
             showBar = true
         }
 
-        // Double only possible with 2 cards
-  /*      if ((returnStringGlobal == "DD") && ((buttonpressed == "CARDSLEFT") || (buttonpressed == "STANDLEFT"))){
-            if (playerCards.size > 2){
-                showBar = false
-            }
-        }
 
-        // Double only possible with 2 cards
-        if ((returnStringGlobal == "DD") && ((buttonpressed == "CARDSRIGHT") || (buttonpressed == "STANDRIGHT"))){
-            if (playerCards_split.size > 2){
-                showBar = false
-            }
-        }*/
 
         // Check if table says Stand
         if (showBar) {
