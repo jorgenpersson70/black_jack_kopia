@@ -102,24 +102,7 @@ for (j in 0..numberOfDecks-1) {
         deckCardValue.add(cardNameValueTemp)
     }
 }
- /*           for (i in 0..51){
-                var cardNameValueTemp = CardNameValue()
-                cardNameValueTemp.name = deckOfCardsInt[i]
-                cardNameValueTemp.value = deckOfCardsValue[i]
 
-
-                deckCardValue.add(cardNameValueTemp)
-            }
-            for (i in 0..51){
-                var cardNameValueTemp = CardNameValue()
-                cardNameValueTemp.name = deckOfCardsInt[i]
-                cardNameValueTemp.value = deckOfCardsValue[i]
-
-
-                deckCardValue.add(cardNameValueTemp)
-            }*/
-
-     //       deckCardValue.shuffle()
             for (i in 0..51)
             {
                 Log.i("här kommer imagenumber ", "hej hopp " + deckCardValue[i].name.toString())
@@ -130,29 +113,6 @@ for (j in 0..numberOfDecks-1) {
             {
                 deckCardValue.shuffle()
             }
-
-    /*        for (i in 0..10) {
-                var cardNameValue = CardNameValue()
-
-                cardNameValue.name = i
-                cardNameValue.value = i
-                testa.add(cardNameValue)
-
-            }*/
-
-       //     deckOfCardsInt = ArrayList(mutableListOf(R.drawable.clubs_3))
-       /*     for (i in 1..51){
-                deckOfCardsInt.add(R.drawable.clubs_3+i)
-            }*/
-
-       /*     deckOfCardsInt.add(R.drawable.clubs_2+2)
-            deckOfCardsInt.add(R.drawable.clubs_2+3)
-            deckOfCardsInt.add(R.drawable.clubs_2+4)
-            deckOfCardsInt.add(R.drawable.clubs_2+5)
-            deckOfCardsInt.add(R.drawable.clubs_2+6)
-            deckOfCardsInt.add(R.drawable.clubs_2+7)*/
-
-      //      deckOfCardsInt.shuffle()
 
             deckOfCards.shuffle()
             shuffled = true
