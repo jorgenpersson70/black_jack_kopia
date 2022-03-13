@@ -104,11 +104,7 @@ var cheat = false
 
 class MainActivity : AppCompatActivity() {
     var cardArray = CardArray()
- // här   var strategy = ShowStrategyPic()
 
- //   var mGestureThreshold: Int = 0
-
-    //  var flipCardNumber = 1
     var flipDealerCardNumber = 1
 
 
