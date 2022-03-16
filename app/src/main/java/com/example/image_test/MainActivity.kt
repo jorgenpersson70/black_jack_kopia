@@ -101,8 +101,18 @@ var playerRightHasFiveCards = true
 var splitAces = false
 
 var cheat = false
+var mediaPlayer : MediaPlayer? = null
+
+// android:theme="@style/Theme.Image_test">
+// android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+//android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
 
 class MainActivity : AppCompatActivity() {
+
+  //  var PlaySound = VoiceActivity()
+
     var cardArray = CardArray()
 
     var flipDealerCardNumber = 1
@@ -122,7 +132,7 @@ class MainActivity : AppCompatActivity() {
 
     var randomCardsIntValue = ArrayList<CardNameValue>()
 
-    var mediaPlayer : MediaPlayer? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -171,6 +181,7 @@ class MainActivity : AppCompatActivity() {
         var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
         var addPlayerCards2Low = findViewById<TextView>(R.id.addUpPlayer2Low)
 
+        supportActionBar!!.hide()
 
         stack = 1000
 
@@ -182,7 +193,7 @@ class MainActivity : AppCompatActivity() {
         CardStandBtnLeftInvisible()
         splitDoubleBtnInvisible()
 
-
+   //     PlaySound.playSound(true)
 
         playSound(true)
         val snack = Snackbar.make(findViewById(android.R.id.content),"JAG FÖRKLARAR",Snackbar.LENGTH_INDEFINITE)
