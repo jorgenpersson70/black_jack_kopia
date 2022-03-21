@@ -33,6 +33,8 @@ class ShowStrategyPic : AppCompatActivity() {
         var arrow = findViewById<ImageView>(R.id.stratarrow)
         arrow.visibility = View.INVISIBLE
 
+   //     supportActionBar!!.hide()
+
   /*      findViewById<Button>(R.id.radkolumnBtn).setOnClickListener {
             movearrow(10, 1)
         }*/
