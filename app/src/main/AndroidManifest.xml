@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Image_test">
+
+        <activity
+            android:name=".VoiceActivity"
+            android:exported="false" />
         <activity
             android:name=".Testa2"
             android:exported="false" />
