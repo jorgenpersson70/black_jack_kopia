@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/strategyImage"
-        android:layout_width="340dp"
-        android:layout_height="519dp"
+        android:layout_width="731dp"
+        android:layout_height="580dp"
         android:layout_marginBottom="73dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/strat_sp_hit" />
+        app:srcCompat="@drawable/strategy_compact" />
 
     <ImageView
         android:id="@+id/stratarrow"
