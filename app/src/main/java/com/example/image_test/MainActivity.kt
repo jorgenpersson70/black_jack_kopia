@@ -15,6 +15,9 @@ import android.widget.*
 import com.google.android.material.snackbar.Snackbar
 import java.io.IOException
 
+
+// this@main_activity
+
 // They allow doubling for less, as long as the double bet is at least $5. At most casinos, the player
 // must stand after splitting aces. The 1992 edition of Basic Blackjack by Stanford Wong also addresses
 // this rule, but not the 1995 edition.
@@ -181,7 +184,14 @@ class MainActivity : AppCompatActivity() {
         var addPlayerCards2 = findViewById<TextView>(R.id.addUpPlayer2High)
         var addPlayerCards2Low = findViewById<TextView>(R.id.addUpPlayer2Low)
 
-        supportActionBar!!.hide()
+
+    //    android:theme="@style/Theme.Image_test">
+
+// android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+//android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+  //      supportActionBar!!.hide()
 
         stack = 1000
 
