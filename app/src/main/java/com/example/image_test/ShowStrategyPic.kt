@@ -1,5 +1,6 @@
 package com.example.image_test
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -38,6 +39,13 @@ class ShowStrategyPic : AppCompatActivity() {
   /*      findViewById<Button>(R.id.radkolumnBtn).setOnClickListener {
             movearrow(10, 1)
         }*/
+
+        var infoBtn = findViewById<Button>(R.id.infoBtn)
+
+        infoBtn.setOnClickListener {
+            val intent = Intent(this, InfoText::class.java)
+            startActivity(intent)
+        }
 
         val playercard1 = intent.getStringExtra("playercard1")
         Log.i("size", "playercard1 " + playercard1)
