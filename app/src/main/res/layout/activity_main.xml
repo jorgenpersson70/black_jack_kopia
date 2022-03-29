@@ -98,12 +98,12 @@
         android:id="@+id/splitBtn"
         android:layout_width="80dp"
         android:layout_height="55dp"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="@color/black"
         android:text="split"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/doubleBtn"
+        app:layout_constraintEnd_toStartOf="@+id/showStrategyBtn"
         app:layout_constraintTop_toBottomOf="@+id/cards2Btn" />
 
     <Button
@@ -126,11 +126,9 @@
         android:layout_height="46dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
         android:backgroundTint="@color/black"
         android:text="Stand"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/splitBtn"
         app:layout_constraintStart_toEndOf="@+id/cardsBtn"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
@@ -138,6 +136,7 @@
         android:id="@+id/playercardLL"
         android:layout_width="190dp"
         android:layout_height="65dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="13dp"
         android:background="#00695C"
         android:orientation="horizontal"
@@ -206,7 +205,7 @@
         android:id="@+id/newDealBtn"
         android:layout_width="75dp"
         android:layout_height="55dp"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:text="New Deal"
@@ -218,11 +217,11 @@
         android:id="@+id/addUpPlayer2High"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
         android:layout_marginTop="42dp"
+        android:layout_marginEnd="9dp"
         android:text="text"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayoutRight"
         app:layout_constraintTop_toBottomOf="@+id/playerFlipCards2LL"
         tools:visibility="visible" />
 
@@ -230,11 +229,11 @@
         android:id="@+id/addUpPlayer2Low"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="9dp"
         android:text="text"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayoutRight"
         app:layout_constraintTop_toBottomOf="@+id/addUpPlayer2High"
         tools:visibility="visible" />
 
@@ -501,10 +500,9 @@
         android:id="@+id/coins1_player2"
         android:layout_width="25dp"
         android:layout_height="33dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins4_player"
+        app:layout_constraintEnd_toStartOf="@+id/coins2_player2"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
         app:srcCompat="@drawable/u_coins1"
         tools:visibility="visible" />
@@ -513,12 +511,13 @@
         android:id="@+id/coins2_player2"
         android:layout_width="25dp"
         android:layout_height="33dp"
-        android:layout_marginStart="1dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="1dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintStart_toEndOf="@+id/coins1_player2"
+        app:layout_constraintEnd_toStartOf="@+id/coins3_player2"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/u_coins1"
         tools:visibility="visible" />
 
@@ -526,9 +525,9 @@
         android:id="@+id/coins3_player2"
         android:layout_width="25dp"
         android:layout_height="33dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="1dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins2_player2"
+        app:layout_constraintEnd_toStartOf="@+id/coins4_player2"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
         app:srcCompat="@drawable/u_coins1"
         tools:visibility="visible" />
@@ -537,9 +536,9 @@
         android:id="@+id/coins4_player2"
         android:layout_width="25dp"
         android:layout_height="33dp"
-        android:layout_marginStart="1dp"
+        android:layout_marginEnd="58dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins3_player2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
         app:srcCompat="@drawable/u_coins1"
         tools:visibility="visible" />
@@ -598,9 +597,8 @@
         android:id="@+id/coins1_player2_x"
         android:layout_width="25dp"
         android:layout_height="33dp"
-        android:layout_marginStart="92dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins4_player"
+        app:layout_constraintEnd_toStartOf="@+id/coins2_player2"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
         app:srcCompat="@drawable/x"
         tools:visibility="visible" />
@@ -609,8 +607,9 @@
         android:id="@+id/coins2_player2_x"
         android:layout_width="25dp"
         android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins1_player2"
+        app:layout_constraintEnd_toStartOf="@+id/coins3_player2"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
         app:srcCompat="@drawable/x"
         tools:visibility="visible" />
@@ -619,9 +618,9 @@
         android:id="@+id/coins3_player2_x"
         android:layout_width="25dp"
         android:layout_height="33dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="1dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins2_player2"
+        app:layout_constraintEnd_toStartOf="@+id/coins4_player2"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
         app:srcCompat="@drawable/x"
         tools:visibility="visible" />
@@ -630,9 +629,9 @@
         android:id="@+id/coins4_player2_x"
         android:layout_width="25dp"
         android:layout_height="33dp"
-        android:layout_marginStart="2dp"
+        android:layout_marginEnd="58dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins3_player2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playercardLL"
         app:srcCompat="@drawable/x"
         tools:visibility="visible" />
@@ -674,10 +673,10 @@
         android:id="@+id/bigStack1"
         android:layout_width="37dp"
         android:layout_height="86dp"
-        android:layout_marginStart="21dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/coins10"
+        app:layout_constraintEnd_toStartOf="@+id/bigStack2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/u_coins4"
         tools:visibility="visible" />
@@ -686,10 +685,10 @@
         android:id="@+id/bigStack2"
         android:layout_width="37dp"
         android:layout_height="86dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/bigStack1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/u_coins4"
         tools:visibility="visible" />
@@ -698,12 +697,12 @@
         android:id="@+id/showStrategyBtn"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/black"
         android:text="strategy"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/splitBtn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stand2Btn" />
 
     <Button
@@ -722,10 +721,10 @@
         android:id="@+id/noMoneyLeftTV2"
         android:layout_width="39dp"
         android:layout_height="23dp"
-        android:layout_marginStart="21dp"
+        android:layout_marginEnd="8dp"
         android:text="Deals"
         android:visibility="visible"
-        app:layout_constraintStart_toEndOf="@+id/coins20"
+        app:layout_constraintEnd_toStartOf="@+id/survivedDealsTV"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         tools:visibility="visible" />
 
@@ -733,23 +732,23 @@
         android:id="@+id/survivedDealsTV"
         android:layout_width="39dp"
         android:layout_height="22dp"
-        android:layout_marginStart="7dp"
         android:layout_marginTop="1dp"
-        app:layout_constraintStart_toEndOf="@+id/noMoneyLeftTV2"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/showCoins" />
 
     <LinearLayout
         android:id="@+id/linearLayoutRight"
         android:layout_width="110dp"
         android:layout_height="75dp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="3dp"
+        android:layout_marginEnd="42dp"
         android:layout_marginBottom="7dp"
         android:background="#00695C"
         android:orientation="horizontal"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/cards2Btn"
-        app:layout_constraintStart_toEndOf="@+id/addUpPlayer2High"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coins2_player2"
         tools:visibility="visible">
 
@@ -778,7 +777,6 @@
         android:id="@+id/cards2Btn"
         android:layout_width="90dp"
         android:layout_height="46dp"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:backgroundTint="@color/black"
@@ -786,7 +784,6 @@
         android:textSize="12sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/stand2Btn"
-        app:layout_constraintStart_toEndOf="@+id/standBtn"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutRight"
         tools:visibility="visible" />
 
@@ -794,13 +791,13 @@
         android:id="@+id/stand2Btn"
         android:layout_width="90dp"
         android:layout_height="46dp"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/black"
         android:text="Stand"
         android:textSize="12sp"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/cards2Btn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutRight"
         tools:visibility="visible" />
 
@@ -808,12 +805,12 @@
         android:id="@+id/playerFlipCards2LL"
         android:layout_width="189dp"
         android:layout_height="65dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="4dp"
         android:background="#00695C"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/playercardLL"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coins18"
         tools:visibility="visible">
 
@@ -853,19 +850,19 @@
         android:id="@+id/showCoins"
         android:layout_width="41dp"
         android:layout_height="18dp"
-        android:layout_marginStart="11dp"
         android:layout_marginTop="7dp"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bigStack2" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
         android:layout_marginTop="7dp"
+        android:layout_marginEnd="8dp"
         android:text="Stack"
-        app:layout_constraintStart_toEndOf="@+id/coins20"
+        app:layout_constraintEnd_toStartOf="@+id/showCoins"
         app:layout_constraintTop_toBottomOf="@+id/bigStack1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

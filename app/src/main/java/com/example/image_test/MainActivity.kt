@@ -207,7 +207,7 @@ class MainActivity : AppCompatActivity() {
 
         playSound(true)
         val snack = Snackbar.make(findViewById(android.R.id.content),"JAG FÖRKLARAR",Snackbar.LENGTH_INDEFINITE)
-        snack.setAction("Håll Klaffen !!")
+        snack.setAction("OK")
         {
             playSound(false)
         }
@@ -3055,7 +3055,7 @@ class MainActivity : AppCompatActivity() {
                     "Inte enligt tabell, se tabell?",
                     Snackbar.LENGTH_LONG
                 )
-            snack.setAction("Jepp")
+            snack.setAction("JA")
             {
                 moveArrow()
             }
