@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewInfo">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:gravity="center_horizontal"
+        android:text="Med denna app kan du öva att spela så fördelaktigt som möjligt och kanske gå hem med en vinst från ett casino.\n\nOlika casinon kan ha olika regler när det gäller black jack och det kan vara klokt att leta efter det casino som ger sig själva minsta möjliga fördel.\n\nSkall man ha en chans att gå hem med vinst så bör man spela där black jack ger 3 till 2 dvs du får tillbaka 1,5 gånger dina satsade pengar.\n\nSedan kan det vara tillåtet att dubbla efter split, eller så är det inte tillåtet.\n\nDenna app tillåter inte att man dubblar efter split.\n\nAppen tillåter inte heller att man gör mer än en split.\n\nOm du till exempel får två ess och gör split och sedan blir delad ett ess till till varje ess, då kan du inte göra split så att du spelar fyra händer med vars ett ess.\n\nOm du får black jack, 21 på två kort, då delar appen ut 1,5 gånger din insats omgående men om dealern också får black jack så drar appen tillbaka pengar igen så att du bara får behålla din insats.\n\nOm man lyckas att få fem kort utan att överstiga 21 så räknar appen detta som att du fick 21.\n\nDet enda som slår detta är om dealern får 21 på två kort.\n\nOm du dubblar så får du bara ett kort till varje delat kort.\n\nOm du skall ha en chans att gå hem med vinst så bör du kunna strategitabellen utantill.\n\nAppen meddelar dig om du valde att inte spela enligt tabellen."
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

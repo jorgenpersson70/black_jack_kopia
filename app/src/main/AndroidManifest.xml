@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Image_test">
         <activity
+            android:name=".NewInfo"
+            android:exported="false" />
+        <activity
+            android:name=".MainActinewInfo"
+            android:exported="false" />
+        <activity
             android:name=".InfoText"
             android:exported="false" />
         <activity
@@ -26,8 +32,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-        android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

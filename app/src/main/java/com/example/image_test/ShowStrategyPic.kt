@@ -43,7 +43,7 @@ class ShowStrategyPic : AppCompatActivity() {
         var infoBtn = findViewById<Button>(R.id.infoBtn)
 
         infoBtn.setOnClickListener {
-            val intent = Intent(this, InfoText::class.java)
+            val intent = Intent(this, NewInfo::class.java)
             startActivity(intent)
         }
 
