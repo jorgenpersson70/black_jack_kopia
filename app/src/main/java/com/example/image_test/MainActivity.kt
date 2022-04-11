@@ -2,6 +2,7 @@ package com.example.image_test
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.Display
 import android.view.View
 import android.widget.*
 import com.google.android.material.snackbar.Snackbar
@@ -112,6 +114,14 @@ var mediaPlayer : MediaPlayer? = null
 //android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
 
+/*
+Display display = getWindowManager().getDefaultDisplay();
+Point size = new Point();
+display.getSize(size);
+int width = size.x;
+int height = size.y;
+ */
+
 class MainActivity : AppCompatActivity() {
 
   //  var PlaySound = VoiceActivity()
@@ -172,7 +182,6 @@ class MainActivity : AppCompatActivity() {
         var flip_card1_split = findViewById<ImageView>(R.id.flipCard1_split)
         var flip_card2_split = findViewById<ImageView>(R.id.flipCard2_split)
         var flip_card3_split = findViewById<ImageView>(R.id.flipCard3_split)
-
 
         var flip_lefttopcard = findViewById<ImageView>(R.id.leftTopCard)
         var flip_dealercard2 = findViewById<ImageView>(R.id.dealercard2)
